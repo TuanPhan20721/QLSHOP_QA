@@ -1,0 +1,10 @@
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.csproj.AssemblyReference.cache
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormDangNhap.resources
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.Properties.Resources.resources
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.csproj.GenerateResource.cache
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.csproj.CoreCompileInputs.cache
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\QLShop_QA.exe.config
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\QLShop_QA.exe
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\QLShop_QA.pdb
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.exe
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.pdb
