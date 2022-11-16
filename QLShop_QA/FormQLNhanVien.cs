@@ -16,5 +16,104 @@ namespace QLShop_QA
         {
             InitializeComponent();
         }
+        private void FormQLNhanVien_Load(object sender, EventArgs e)
+        {
+            loadDB();
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            txtDC.Clear();
+            txtDT.Clear();
+            txtMaNV.Clear();
+            txtTenNV.Clear();
+            cboGioiTinh.Text = null;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                string manv = gtvQLNV.SelectedCells[0].OwningRow.Cells["maNhanVien"].Value.ToString();
+                nhanVien delete = db.nhanViens.Where(p => p.maNhanVien.Equals(manv)).SingleOrDefault();
+                db.nhanViens.DeleteOnSubmit(delete);
+                db.SubmitChanges();
+            }
+            loadDB();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                string manv = gtvQLNV.SelectedCells[0].OwningRow.Cells["maNhanVien"].Value.ToString();
+                string tennv = gtvQLNV.SelectedCells[0].OwningRow.Cells["tenNhanVien"].Value.ToString();
+                string gioitinh = gtvQLNV.SelectedCells[0].OwningRow.Cells["gioiTinh"].Value.ToString();
+                string diachi = gtvQLNV.SelectedCells[0].OwningRow.Cells["diaChi"].Value.ToString();
+                string dienthoai = gtvQLNV.SelectedCells[0].OwningRow.Cells["dienThoai"].Value.ToString();
+                DateTime? ngaysinh = gtvQLNV.SelectedCells[0].OwningRow.Cells["ngaySinh"].Value == null?
+                    null : (DateTime?)gtvQLNV.SelectedCells[0].OwningRow.Cells["ngaySinh"].Value;
+
+                nhanVien sua = db.nhanViens.Where(p => p.maNhanVien.Equals(manv)).SingleOrDefault();
+                sua.tenNhanVien = tennv;
+                sua.gioiTinh = gioitinh;
+                sua.diaChi = diachi;
+                sua.dienThoai = dienthoai;
+                sua.ngaySinh = ngaysinh;
+
+                db.SubmitChanges();
+            }
+            loadDB();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                //string manv = gtvQLNV.SelectedCells[0].OwningRow.Cells["maNhanVien"].Value.ToString();
+                //string tennv = gtvQLNV.SelectedCells[1].OwningRow.Cells["tenNhanVien"].Value.ToString();
+                //string gioitinh = gtvQLNV.SelectedCells[2].OwningRow.Cells["gioiTinh"].Value.ToString();
+                //string diachi = gtvQLNV.SelectedCells[3].OwningRow.Cells["diaChi"].Value.ToString();
+                //string dienthoai = gtvQLNV.SelectedCells[4].OwningRow.Cells["dienThoai"].Value.ToString();
+                //DateTime ngaysinh = (DateTime)gtvQLNV.SelectedCells[5].OwningRow.Cells["ngaySinh"].Value;
+
+                nhanVien them = new nhanVien();
+                them.maNhanVien = txtMaNV.Text;
+                them.tenNhanVien = txtTenNV.Text;
+                them.gioiTinh = cboGioiTinh.Text;
+                them.diaChi = txtDC.Text;
+                them.dienThoai = txtDT.Text;
+                them.ngaySinh = DateTime.Parse(dtpNgaySinh.Text);
+
+                db.nhanViens.InsertOnSubmit(them);
+                db.SubmitChanges();
+            }
+            loadDB();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                gtvQLNV.DataSource = db.nhanViens.Where(p => p.maNhanVien.Equals(txtTimKiem.Text));
+            }
+            txtTimKiem.Clear();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void loadDB()
+        {
+            using(QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                gtvQLNV.DataSource = from nv in db.nhanViens select nv;
+            }    
+        }
+
+        private void cboGioiTinh_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
     }
 }

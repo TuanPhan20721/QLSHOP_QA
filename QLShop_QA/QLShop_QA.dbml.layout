@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.625" name="QLShop_QA">
+  <DataContextMoniker Name="/QLShop_QADataContext" />
+  <nestedChildShapes>
+    <classShape Id="bd7404ad-93f4-4c9f-b09e-1291f884b02f" absoluteBounds="0.75, 7.625, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/QLShop_QADataContext/chatLieu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31f2f7dd-f37f-4a48-9fcb-8d58ead1f865" absoluteBounds="0.765, 8.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf82819d-2e7e-4d6b-b5ca-3f6a12a427b4" absoluteBounds="0.75, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/QLShop_QADataContext/nhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72d0eb57-979e-4b42-8505-8b6a42433248" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="511cff07-1dd9-4ab9-9263-611b5bda1801" absoluteBounds="6.25, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/QLShop_QADataContext/chiTietHDBan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="200f88bd-90ac-49c6-82f0-7f508fec311b" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="209da9cf-119f-4a32-b185-4af88d3eb36e" absoluteBounds="3.5, 7, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/QLShop_QADataContext/hang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a0294c81-5c5e-4c7e-803b-c783166b6703" absoluteBounds="3.515, 7.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9974cbdc-6ae6-485f-8b67-36e336863ebe" absoluteBounds="3.5, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/QLShop_QADataContext/HDBan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d03db91-2bbf-41a5-a3bf-06c7a2b0b79c" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="958c3e6d-3562-4366-8536-73f063fe2b51" absoluteBounds="0.75, 3.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/QLShop_QADataContext/khach" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d9b2f01-a6cb-4b9e-ba5e-398c028665db" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 8.17390055338542); (7.25 : 8.17390055338542); (7.25 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLShop_QADataContext/hang/hang_chiTietHDBan" />
+      <nodes>
+        <classShapeMoniker Id="209da9cf-119f-4a32-b185-4af88d3eb36e" />
+        <classShapeMoniker Id="511cff07-1dd9-4ab9-9263-611b5bda1801" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.22199625651042); (3.5 : 8.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLShop_QADataContext/chatLieu/chatLieu_hang" />
+      <nodes>
+        <classShapeMoniker Id="bd7404ad-93f4-4c9f-b09e-1291f884b02f" />
+        <classShapeMoniker Id="209da9cf-119f-4a32-b185-4af88d3eb36e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.88544840494792); (6.25 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLShop_QADataContext/HDBan/HDBan_chiTietHDBan" />
+      <nodes>
+        <classShapeMoniker Id="9974cbdc-6ae6-485f-8b67-36e336863ebe" />
+        <classShapeMoniker Id="511cff07-1dd9-4ab9-9263-611b5bda1801" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.88544840494792); (3.5 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLShop_QADataContext/nhanVien/nhanVien_HDBan" />
+      <nodes>
+        <classShapeMoniker Id="bf82819d-2e7e-4d6b-b5ca-3f6a12a427b4" />
+        <classShapeMoniker Id="9974cbdc-6ae6-485f-8b67-36e336863ebe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.85659912109375); (4.5 : 4.85659912109375); (4.5 : 2.77089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLShop_QADataContext/khach/khach_HDBan" />
+      <nodes>
+        <classShapeMoniker Id="958c3e6d-3562-4366-8536-73f063fe2b51" />
+        <classShapeMoniker Id="9974cbdc-6ae6-485f-8b67-36e336863ebe" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
