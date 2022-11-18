@@ -271,7 +271,7 @@ namespace QLShop_QA
             this.Controls.Add(this.label1);
             this.Name = "FormQLKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormQLKhachHang";
+            this.Text = "Quản lý khách hàng";
             this.Load += new System.EventHandler(this.FormQLKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.ResumeLayout(false);

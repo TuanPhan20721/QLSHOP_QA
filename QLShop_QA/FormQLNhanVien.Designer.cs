@@ -144,7 +144,7 @@ namespace QLShop_QA
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 88);
+            this.label2.Location = new System.Drawing.Point(10, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 9;
@@ -153,7 +153,7 @@ namespace QLShop_QA
             // lbtennv
             // 
             this.lbtennv.AutoSize = true;
-            this.lbtennv.Location = new System.Drawing.Point(12, 133);
+            this.lbtennv.Location = new System.Drawing.Point(6, 133);
             this.lbtennv.Name = "lbtennv";
             this.lbtennv.Size = new System.Drawing.Size(76, 13);
             this.lbtennv.TabIndex = 10;
@@ -162,7 +162,7 @@ namespace QLShop_QA
             // GT
             // 
             this.GT.AutoSize = true;
-            this.GT.Location = new System.Drawing.Point(259, 88);
+            this.GT.Location = new System.Drawing.Point(253, 88);
             this.GT.Name = "GT";
             this.GT.Size = new System.Drawing.Size(50, 13);
             this.GT.TabIndex = 11;
@@ -171,7 +171,7 @@ namespace QLShop_QA
             // DC
             // 
             this.DC.AutoSize = true;
-            this.DC.Location = new System.Drawing.Point(259, 133);
+            this.DC.Location = new System.Drawing.Point(253, 133);
             this.DC.Name = "DC";
             this.DC.Size = new System.Drawing.Size(40, 13);
             this.DC.TabIndex = 12;
@@ -180,7 +180,7 @@ namespace QLShop_QA
             // DT
             // 
             this.DT.AutoSize = true;
-            this.DT.Location = new System.Drawing.Point(477, 88);
+            this.DT.Location = new System.Drawing.Point(471, 88);
             this.DT.Name = "DT";
             this.DT.Size = new System.Drawing.Size(55, 13);
             this.DT.TabIndex = 13;
@@ -189,7 +189,7 @@ namespace QLShop_QA
             // NS
             // 
             this.NS.AutoSize = true;
-            this.NS.Location = new System.Drawing.Point(477, 133);
+            this.NS.Location = new System.Drawing.Point(471, 133);
             this.NS.Name = "NS";
             this.NS.Size = new System.Drawing.Size(54, 13);
             this.NS.TabIndex = 14;
@@ -197,28 +197,28 @@ namespace QLShop_QA
             // 
             // txtMaNV
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(94, 85);
+            this.txtMaNV.Location = new System.Drawing.Point(88, 85);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(145, 20);
             this.txtMaNV.TabIndex = 15;
             // 
             // txtDC
             // 
-            this.txtDC.Location = new System.Drawing.Point(315, 130);
+            this.txtDC.Location = new System.Drawing.Point(309, 130);
             this.txtDC.Name = "txtDC";
             this.txtDC.Size = new System.Drawing.Size(145, 20);
             this.txtDC.TabIndex = 17;
             // 
             // txtDT
             // 
-            this.txtDT.Location = new System.Drawing.Point(538, 85);
+            this.txtDT.Location = new System.Drawing.Point(532, 85);
             this.txtDT.Name = "txtDT";
             this.txtDT.Size = new System.Drawing.Size(145, 20);
             this.txtDT.TabIndex = 18;
             // 
             // txtTenNV
             // 
-            this.txtTenNV.Location = new System.Drawing.Point(94, 130);
+            this.txtTenNV.Location = new System.Drawing.Point(88, 130);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(145, 20);
             this.txtTenNV.TabIndex = 20;
@@ -229,7 +229,7 @@ namespace QLShop_QA
             this.cboGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cboGioiTinh.Location = new System.Drawing.Point(315, 85);
+            this.cboGioiTinh.Location = new System.Drawing.Point(309, 85);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(145, 21);
             this.cboGioiTinh.TabIndex = 21;
@@ -238,7 +238,7 @@ namespace QLShop_QA
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(538, 127);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(532, 127);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(142, 20);
             this.dtpNgaySinh.TabIndex = 22;
@@ -271,7 +271,7 @@ namespace QLShop_QA
             this.Controls.Add(this.gtvQLNV);
             this.Name = "FormQLNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormQLNhanVien";
+            this.Text = "Quản lý nhân viên";
             this.Load += new System.EventHandler(this.FormQLNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gtvQLNV)).EndInit();
             this.ResumeLayout(false);

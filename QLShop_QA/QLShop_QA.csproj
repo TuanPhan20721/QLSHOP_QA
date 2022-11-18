@@ -83,6 +83,12 @@
     <Compile Include="FormTimKiem.Designer.cs">
       <DependentUpon>FormTimKiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FromQLHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromQLHoaDon.Designer.cs">
+      <DependentUpon>FromQLHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLShop_QA.designer.cs">
@@ -92,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQLHang.resx">
+      <DependentUpon>FormQLHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQLKhachHang.resx">
       <DependentUpon>FormQLKhachHang.cs</DependentUpon>
@@ -104,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTimKiem.resx">
       <DependentUpon>FormTimKiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromQLHoaDon.resx">
+      <DependentUpon>FromQLHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
