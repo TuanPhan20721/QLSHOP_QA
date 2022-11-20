@@ -41,8 +41,8 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                var dataKhoa = db.chatLieus.Select(k => k);
-                cboMaChatLieu.DataSource = dataKhoa;
+                var data = db.chatLieus.Select(k => k);
+                cboMaChatLieu.DataSource = data;
                 cboMaChatLieu.DisplayMember = "maChatLieu";
                 cboMaChatLieu.ValueMember = "maChatLieu";
             }
@@ -143,6 +143,11 @@ namespace QLShop_QA
             txtMaSP.Clear();
             txtSoLuong.Clear();
             txtTenSP.Clear();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

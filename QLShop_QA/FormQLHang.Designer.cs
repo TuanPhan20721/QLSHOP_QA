@@ -177,6 +177,7 @@ namespace QLShop_QA
             this.btnThoat.TabIndex = 29;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuu
             // 
