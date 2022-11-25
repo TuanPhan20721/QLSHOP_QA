@@ -272,6 +272,7 @@ namespace QLShop_QA
             this.Name = "FormQLNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormQLNhanVien_FormClosing);
             this.Load += new System.EventHandler(this.FormQLNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gtvQLNV)).EndInit();
             this.ResumeLayout(false);

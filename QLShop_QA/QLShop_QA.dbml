@@ -7,15 +7,11 @@
       <Association Name="chatLieu_hang" Member="hangs" ThisKey="maChatLieu" OtherKey="maChatLieu" Type="hang" />
     </Type>
   </Table>
-  <Table Name="dbo.nhanVien" Member="nhanViens">
-    <Type Name="nhanVien">
-      <Column Name="maNhanVien" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenNhanVien" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="gioiTinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="diaChi" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="dienThoai" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
-      <Column Name="ngaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="nhanVien_HDBan" Member="HDBans" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="HDBan" />
+  <Table Name="dbo.quyen" Member="quyens">
+    <Type Name="quyen">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="quyen_nhanVien" Member="nhanViens" ThisKey="id" OtherKey="idQuyen" Type="nhanVien" />
     </Type>
   </Table>
   <Table Name="dbo.chiTietHDBan" Member="chiTietHDBans">
@@ -52,8 +48,8 @@
       <Column Name="maKhach" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="tongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="HDBan_chiTietHDBan" Member="chiTietHDBans" ThisKey="maHDBan" OtherKey="maHDBan" Type="chiTietHDBan" />
-      <Association Name="nhanVien_HDBan" Member="nhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="nhanVien" IsForeignKey="true" />
       <Association Name="khach_HDBan" Member="khach" ThisKey="maKhach" OtherKey="makhach" Type="khach" IsForeignKey="true" />
+      <Association Name="nhanVien_HDBan" Member="nhanVien" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="nhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.khach" Member="khaches">
@@ -65,6 +61,21 @@
       <Column Name="dienthoai" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
       <Column Name="ngaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="khach_HDBan" Member="HDBans" ThisKey="makhach" OtherKey="maKhach" Type="HDBan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.nhanVien" Member="nhanViens">
+    <Type Name="nhanVien">
+      <Column Name="maNhanVien" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenNhanVien" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="gioiTinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="diaChi" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="dienThoai" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ngaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="taikhoan" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="matkhau" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idQuyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="nhanVien_HDBan" Member="HDBans" ThisKey="maNhanVien" OtherKey="maNhanVien" Type="HDBan" />
+      <Association Name="quyen_nhanVien" Member="quyen" ThisKey="idQuyen" OtherKey="id" Type="quyen" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QLShop_QA
 {
-    public partial class FormTimKiem : Form
+    public partial class FormTimKiem : System.Windows.Forms.Form
     {
         public FormTimKiem()
         {

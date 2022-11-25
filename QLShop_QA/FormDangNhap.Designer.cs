@@ -96,7 +96,7 @@ namespace QLShop_QA
             this.btnThoat.Location = new System.Drawing.Point(222, 166);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 5;
+            this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -107,7 +107,7 @@ namespace QLShop_QA
             this.btnDN.Location = new System.Drawing.Point(125, 166);
             this.btnDN.Name = "btnDN";
             this.btnDN.Size = new System.Drawing.Size(75, 23);
-            this.btnDN.TabIndex = 6;
+            this.btnDN.TabIndex = 5;
             this.btnDN.Text = "Đăng nhập";
             this.btnDN.UseVisualStyleBackColor = true;
             this.btnDN.Click += new System.EventHandler(this.btnDN_Click);

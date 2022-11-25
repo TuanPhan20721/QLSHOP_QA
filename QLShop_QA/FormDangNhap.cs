@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace QLShop_QA
 {
-    public partial class FormDangNhap : Form
+    public partial class FormDangNhap : System.Windows.Forms.Form
     {
         public FormDangNhap()
         {
             InitializeComponent();
+            btnDN.Focus();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -25,10 +26,10 @@ namespace QLShop_QA
         private void FormDangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult rs = MessageBox.Show("Bạn có muốn thoát hay không ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-            if(rs == DialogResult.No)
+            if (rs == DialogResult.No)
             {
                 e.Cancel = true;
-            }    
+            }
         }
 
         private void txtTDN_Leave(object sender, EventArgs e)
@@ -56,18 +57,40 @@ namespace QLShop_QA
 
         private void btnDN_Click(object sender, EventArgs e)
         {
-            if(txtTDN.Text.Trim() == "" )
+            //if(txtTDN.Text.Trim() == "" )
+            //{
+            //    MessageBox.Show("Bạn chưa nhập tên đăng nhập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}else
+            //if (txtMK.Text.Trim() == "")
+            //{
+            //    MessageBox.Show("Bạn chưa nhập mật khẩu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+            //else 
+            //{
+            //    MessageBox.Show("Cảm ơn Bạn", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}    
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                MessageBox.Show("Bạn chưa nhập tên đăng nhập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }else
-            if (txtMK.Text.Trim() == "")
-            {
-                MessageBox.Show("Bạn chưa nhập mật khẩu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                var nv = db.nhanViens.FirstOrDefault(x => x.taikhoan.Equals(txtTDN.Text) && x.matkhau.Equals(txtMK.Text));
+                
+               if (nv!=null)
+                {
+                    if(nv.idQuyen==1)//admin
+                    {
+                        new FormAdmin().Show();
+                    }else
+                        if (nv.idQuyen == 2)
+                    {
+                        new FormLapHD().Show();
+
+                    }
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Sai tai khoan hoac mat khau", "Thong bao!", MessageBoxButtons.OK);
+                }
             }
-            else 
-            {
-                MessageBox.Show("Cảm ơn Bạn", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }    
         }
     }
 }

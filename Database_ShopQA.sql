@@ -1,4 +1,7 @@
-﻿create database QlShop_QA
+﻿use master
+go
+
+create database QlShop_QA
 go
 use QlShop_QA
 go
@@ -8,7 +11,11 @@ create table chatLieu
 	maChatLieu nvarchar(10) not null primary key,
 	tenChatLieu nvarchar(30)
 )
-
+create table quyen
+(
+	id int not null primary key,
+	name varchar(50)
+)
 create table khach
 (
 	makhach nvarchar(10) not null primary key,
@@ -18,7 +25,6 @@ create table khach
 	dienthoai nvarchar(15),
 	ngaySinh datetime
 )
-select * from khach
 
 create table hang
 (
@@ -41,7 +47,11 @@ create table nhanVien
 	gioiTinh nvarchar(10),
 	diaChi nvarchar(30),
 	dienThoai nvarchar(15),
-	ngaySinh datetime
+	ngaySinh datetime,
+	taikhoan varchar(100),
+	matkhau varchar(100),
+	idQuyen int,
+	constraint fk_idQuyen foreign key(idQuyen) references quyen(id)
 )
 
 
@@ -70,7 +80,10 @@ create table chiTietHDBan
 )
 ------------------------------------- NHẬP LIỆU ----------------------------------------
 
-
+------ QUYỀN -------
+INSERT INTO quyen VALUES
+(1,N'Admin'),
+(2,N'NhanVien')
 ------ CHẤT LIÊU -------
 INSERT INTO chatLieu VALUES
 ('CL01',N'COTTON'),
@@ -81,9 +94,9 @@ INSERT INTO chatLieu VALUES
 SET DATEFORMAT dmy
 ---- NHÂN VIÊN -------
 INSERT INTO nhanVien VALUES
-('NV01',N'Nguyễn Thị Thảo Vy',N'Nữ',N'Tiền Giang',0353676483,'03/02/2001'),
-('NV02',N'Phan Văn Tuấn',N'Nam',N'Đắk Lắk',0523612459,'25/12/2001'),
-('NV03',N'Nguyễn Thị Thảo Vy',N'Nam',N'Đắk Lắk',0625132485,'24/12/2001')
+('NV01',N'Nguyễn Thị Thảo Vy',N'Nữ',N'Tiền Giang',0353676483,'03/02/2001','thaovy','123',2),
+('NV02',N'Phan Văn Tuấn',N'Nam',N'Đắk Lắk',0523612459,'25/12/2001','vantuan','123',1),
+('NV03',N'Huỳnh Phát',N'Nam',N'Đắk Lắk',0625132485,'24/12/2001','huynhphat','123',2)
 
 SET DATEFORMAT dmy
 ------ KHÁCH HÀNG ----------
@@ -139,9 +152,14 @@ INSERT INTO HDBan VALUES
 
 ------ CHI TIẾT HÓA ĐƠN -------------
 INSERT INTO chiTietHDBan VALUES
-('HD01','H01',1,150000,0,0),
-('HD01','H02',1,150000,0,0),
-('HD02','H05',3,150000,0,0),
-('HD03','H08',1,200000,0,0),
-('HD04','H09',1,200000,0,0),
-('HD05','H12',1,220000,0,0)
+('HD01','H01',1,150000,0.1,0),
+('HD01','H02',1,150000,0.2,0),
+('HD02','H05',3,150000,0.3,0),
+('HD03','H08',1,200000,0.1,0),
+('HD04','H09',1,200000,0.2,0),
+('HD05','H12',1,220000,0.1,0)
+
+	select * from HDBan
+	select * from chiTietHDBan
+	select * from nhanVien
+	select * from quyen

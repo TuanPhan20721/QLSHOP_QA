@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QLShop_QA
 {
-    public partial class FormQLKhachHang : Form
+    public partial class FormQLKhachHang : System.Windows.Forms.Form
     {
         public FormQLKhachHang()
         {
@@ -104,6 +104,21 @@ namespace QLShop_QA
         private void cboGioiTinh_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            new FormAdmin().Show();
+            this.Hide();
+        }
+
+        private void FormQLKhachHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn thoát hay không ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (rs == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

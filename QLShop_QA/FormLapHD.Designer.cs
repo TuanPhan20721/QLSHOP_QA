@@ -1,7 +1,7 @@
 ﻿
 namespace QLShop_QA
 {
-    partial class FromQLHoaDon
+    partial class FormLapHD
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@ namespace QLShop_QA
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -38,6 +37,7 @@ namespace QLShop_QA
             this.btnThem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpNgayBan = new System.Windows.Forms.DateTimePicker();
             this.cboMaKH = new System.Windows.Forms.ComboBox();
             this.cboMaNV = new System.Windows.Forms.ComboBox();
             this.txtDT = new System.Windows.Forms.TextBox();
@@ -47,7 +47,6 @@ namespace QLShop_QA
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtNgayBan = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenNV = new System.Windows.Forms.TextBox();
@@ -55,9 +54,16 @@ namespace QLShop_QA
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cboMaHang = new System.Windows.Forms.ComboBox();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
+            this.maHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
@@ -70,13 +76,6 @@ namespace QLShop_QA
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnInHD = new System.Windows.Forms.Button();
-            this.maHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboMaHang = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -87,20 +86,11 @@ namespace QLShop_QA
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label1.Location = new System.Drawing.Point(246, 24);
+            this.label1.Location = new System.Drawing.Point(263, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 25);
+            this.label1.Size = new System.Drawing.Size(155, 25);
             this.label1.TabIndex = 25;
-            this.label1.Text = "QUẢN LÝ HÓA ĐƠN";
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(608, 12);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 30;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
+            this.label1.Text = "LẬP HÓA ĐƠN";
             // 
             // btnTimKiem
             // 
@@ -110,6 +100,7 @@ namespace QLShop_QA
             this.btnTimKiem.TabIndex = 36;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnLuu
             // 
@@ -119,6 +110,7 @@ namespace QLShop_QA
             this.btnLuu.TabIndex = 35;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
@@ -128,6 +120,7 @@ namespace QLShop_QA
             this.btnSua.TabIndex = 34;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -137,6 +130,7 @@ namespace QLShop_QA
             this.btnXoa.TabIndex = 33;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -146,6 +140,7 @@ namespace QLShop_QA
             this.btnThem.TabIndex = 32;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtTimKiem
             // 
@@ -156,6 +151,7 @@ namespace QLShop_QA
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpNgayBan);
             this.groupBox1.Controls.Add(this.cboMaKH);
             this.groupBox1.Controls.Add(this.cboMaNV);
             this.groupBox1.Controls.Add(this.txtDT);
@@ -165,7 +161,6 @@ namespace QLShop_QA
             this.groupBox1.Controls.Add(this.txtTenKH);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtNgayBan);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTenNV);
@@ -174,10 +169,18 @@ namespace QLShop_QA
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(28, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(655, 162);
+            this.groupBox1.Size = new System.Drawing.Size(655, 173);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
+            // 
+            // dtpNgayBan
+            // 
+            this.dtpNgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayBan.Location = new System.Drawing.Point(109, 67);
+            this.dtpNgayBan.Name = "dtpNgayBan";
+            this.dtpNgayBan.Size = new System.Drawing.Size(179, 20);
+            this.dtpNgayBan.TabIndex = 18;
             // 
             // cboMaKH
             // 
@@ -195,11 +198,13 @@ namespace QLShop_QA
             this.cboMaNV.Name = "cboMaNV";
             this.cboMaNV.Size = new System.Drawing.Size(179, 21);
             this.cboMaNV.TabIndex = 16;
+            this.cboMaNV.SelectedIndexChanged += new System.EventHandler(this.cboMaNV_SelectedIndexChanged);
             // 
             // txtDT
             // 
             this.txtDT.Location = new System.Drawing.Point(456, 131);
             this.txtDT.Name = "txtDT";
+            this.txtDT.ReadOnly = true;
             this.txtDT.Size = new System.Drawing.Size(163, 20);
             this.txtDT.TabIndex = 15;
             // 
@@ -216,6 +221,7 @@ namespace QLShop_QA
             // 
             this.txtDC.Location = new System.Drawing.Point(456, 100);
             this.txtDC.Name = "txtDC";
+            this.txtDC.ReadOnly = true;
             this.txtDC.Size = new System.Drawing.Size(163, 20);
             this.txtDC.TabIndex = 13;
             // 
@@ -232,6 +238,7 @@ namespace QLShop_QA
             // 
             this.txtTenKH.Location = new System.Drawing.Point(456, 64);
             this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.ReadOnly = true;
             this.txtTenKH.Size = new System.Drawing.Size(163, 20);
             this.txtTenKH.TabIndex = 11;
             // 
@@ -252,13 +259,6 @@ namespace QLShop_QA
             this.label6.Size = new System.Drawing.Size(82, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Mã khách hàng";
-            // 
-            // txtNgayBan
-            // 
-            this.txtNgayBan.Location = new System.Drawing.Point(109, 67);
-            this.txtNgayBan.Name = "txtNgayBan";
-            this.txtNgayBan.Size = new System.Drawing.Size(179, 20);
-            this.txtNgayBan.TabIndex = 7;
             // 
             // label5
             // 
@@ -282,6 +282,7 @@ namespace QLShop_QA
             // 
             this.txtTenNV.Location = new System.Drawing.Point(109, 134);
             this.txtTenNV.Name = "txtTenNV";
+            this.txtTenNV.ReadOnly = true;
             this.txtTenNV.Size = new System.Drawing.Size(179, 20);
             this.txtTenNV.TabIndex = 3;
             // 
@@ -334,10 +335,20 @@ namespace QLShop_QA
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin các mặt hàng";
             // 
+            // cboMaHang
+            // 
+            this.cboMaHang.FormattingEnabled = true;
+            this.cboMaHang.Location = new System.Drawing.Point(110, 42);
+            this.cboMaHang.Name = "cboMaHang";
+            this.cboMaHang.Size = new System.Drawing.Size(110, 21);
+            this.cboMaHang.TabIndex = 19;
+            this.cboMaHang.SelectedIndexChanged += new System.EventHandler(this.cboMaHang_SelectedIndexChanged);
+            // 
             // txtTongTien
             // 
             this.txtTongTien.Location = new System.Drawing.Point(538, 344);
             this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(110, 20);
             this.txtTongTien.TabIndex = 18;
             // 
@@ -362,8 +373,46 @@ namespace QLShop_QA
             this.thanhTien});
             this.dgvHoaDon.Location = new System.Drawing.Point(6, 121);
             this.dgvHoaDon.Name = "dgvHoaDon";
+            this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHoaDon.Size = new System.Drawing.Size(644, 217);
             this.dgvHoaDon.TabIndex = 16;
+            this.dgvHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
+            // 
+            // maHang
+            // 
+            this.maHang.DataPropertyName = "maHang";
+            this.maHang.HeaderText = "Mã hàng";
+            this.maHang.Name = "maHang";
+            // 
+            // tenHang
+            // 
+            this.tenHang.DataPropertyName = "tenHang";
+            this.tenHang.HeaderText = "Tên hàng";
+            this.tenHang.Name = "tenHang";
+            // 
+            // soLuong
+            // 
+            this.soLuong.DataPropertyName = "soLuong";
+            this.soLuong.HeaderText = "Số lượng";
+            this.soLuong.Name = "soLuong";
+            // 
+            // donGia
+            // 
+            this.donGia.DataPropertyName = "donGia";
+            this.donGia.HeaderText = "Đơn giá";
+            this.donGia.Name = "donGia";
+            // 
+            // giamGia
+            // 
+            this.giamGia.DataPropertyName = "giamGia";
+            this.giamGia.HeaderText = "Giảm giá (%)";
+            this.giamGia.Name = "giamGia";
+            // 
+            // thanhTien
+            // 
+            this.thanhTien.DataPropertyName = "thanhTien";
+            this.thanhTien.HeaderText = "Thành tiền";
+            this.thanhTien.Name = "thanhTien";
             // 
             // txtThanhTien
             // 
@@ -371,6 +420,7 @@ namespace QLShop_QA
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(110, 20);
             this.txtThanhTien.TabIndex = 15;
+            this.txtThanhTien.TextChanged += new System.EventHandler(this.txtThanhTien_TextChanged);
             // 
             // label15
             // 
@@ -403,6 +453,7 @@ namespace QLShop_QA
             this.txtGiamGia.Name = "txtGiamGia";
             this.txtGiamGia.Size = new System.Drawing.Size(115, 20);
             this.txtGiamGia.TabIndex = 11;
+            this.txtGiamGia.TextChanged += new System.EventHandler(this.txtGiamGia_TextChanged);
             // 
             // label13
             // 
@@ -417,6 +468,7 @@ namespace QLShop_QA
             // 
             this.txtTenHang.Location = new System.Drawing.Point(293, 42);
             this.txtTenHang.Name = "txtTenHang";
+            this.txtTenHang.ReadOnly = true;
             this.txtTenHang.Size = new System.Drawing.Size(115, 20);
             this.txtTenHang.TabIndex = 9;
             // 
@@ -463,51 +515,7 @@ namespace QLShop_QA
             this.btnInHD.Text = "In hóa đơn";
             this.btnInHD.UseVisualStyleBackColor = true;
             // 
-            // maHang
-            // 
-            this.maHang.DataPropertyName = "maHang";
-            this.maHang.HeaderText = "Mã hàng";
-            this.maHang.Name = "maHang";
-            // 
-            // tenHang
-            // 
-            this.tenHang.DataPropertyName = "tenHang";
-            this.tenHang.HeaderText = "Tên hàng";
-            this.tenHang.Name = "tenHang";
-            // 
-            // soLuong
-            // 
-            this.soLuong.DataPropertyName = "soLuong";
-            this.soLuong.HeaderText = "Số lượng";
-            this.soLuong.Name = "soLuong";
-            // 
-            // donGia
-            // 
-            this.donGia.DataPropertyName = "donGia";
-            this.donGia.HeaderText = "Đơn giá";
-            this.donGia.Name = "donGia";
-            // 
-            // giamGia
-            // 
-            this.giamGia.DataPropertyName = "giamGia";
-            this.giamGia.HeaderText = "Giảm giá (%)";
-            this.giamGia.Name = "giamGia";
-            // 
-            // thanhTien
-            // 
-            this.thanhTien.DataPropertyName = "thanhTien";
-            this.thanhTien.HeaderText = "Thành tiền";
-            this.thanhTien.Name = "thanhTien";
-            // 
-            // cboMaHang
-            // 
-            this.cboMaHang.FormattingEnabled = true;
-            this.cboMaHang.Location = new System.Drawing.Point(110, 42);
-            this.cboMaHang.Name = "cboMaHang";
-            this.cboMaHang.Size = new System.Drawing.Size(110, 21);
-            this.cboMaHang.TabIndex = 19;
-            // 
-            // FromQLHoaDon
+            // FromLapHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -521,11 +529,11 @@ namespace QLShop_QA
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.label1);
-            this.Name = "FromQLHoaDon";
+            this.Name = "FromLapHD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý hóa đơn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FromLapHD_FormClosing);
             this.Load += new System.EventHandler(this.FromQLHoaDon_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -540,7 +548,6 @@ namespace QLShop_QA
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnSua;
@@ -557,7 +564,6 @@ namespace QLShop_QA
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtNgayBan;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTenNV;
@@ -587,5 +593,6 @@ namespace QLShop_QA
         private System.Windows.Forms.DataGridViewTextBoxColumn giamGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn thanhTien;
         private System.Windows.Forms.ComboBox cboMaHang;
+        private System.Windows.Forms.DateTimePicker dtpNgayBan;
     }
 }

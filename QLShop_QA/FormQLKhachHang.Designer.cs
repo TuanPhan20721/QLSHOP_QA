@@ -185,6 +185,7 @@ namespace QLShop_QA
             this.btnThoat.TabIndex = 35;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txtTimKiem
             // 
@@ -272,6 +273,7 @@ namespace QLShop_QA
             this.Name = "FormQLKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khách hàng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormQLKhachHang_FormClosing);
             this.Load += new System.EventHandler(this.FormQLKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.ResumeLayout(false);

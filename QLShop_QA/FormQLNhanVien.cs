@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QLShop_QA
 {
-    public partial class FormQLNhanVien : Form
+    public partial class FormQLNhanVien : System.Windows.Forms.Form
     {
         public FormQLNhanVien()
         {
@@ -101,7 +101,8 @@ namespace QLShop_QA
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-
+            new FormAdmin().Show();
+            this.Hide();
         }
         public void loadDB()
         {
@@ -114,6 +115,15 @@ namespace QLShop_QA
         private void cboGioiTinh_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
+        }
+
+        private void FormQLNhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn thoát hay không ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (rs == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QLShop_QA
 {
-    public partial class FormQLHang : Form
+    public partial class FormQLHang : System.Windows.Forms.Form
     {
         public FormQLHang()
         {
@@ -90,15 +90,6 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                //txtMaSP.Text = dgvSanPham.SelectedCells[0].OwningRow.Cells["MaSP"].Value.ToString();
-                //txtTenSP.Text = dgvSanPham.SelectedCells[0].OwningRow.Cells["tenSP"].Value.ToString();
-                //cboMaChatLieu.Text = dgvSanPham.SelectedCells[0].OwningRow.Cells["maCL"].Value.ToString();
-                //txtSoLuong.Text = dgvSanPham.SelectedCells[0].OwningRow.Cells["soLuong"].Value.ToString();
-                //txtDonGiaNhap.Text = dgvSanPham.SelectedCells[0].OwningRow.Cells["donGiaNhap"].Value.ToString();
-                //txtDonGiaBan.Text = dgvSanPham.SelectedCells[0].OwningRow.Cells["donGiaBan"].Value.ToString();
-                //txtAnh.Text = dgvSanPham.SelectedCells[0].OwningRow.Cells["anh"].Value.ToString();
-                //txtGhiChu.Text = dgvSanPham.SelectedCells[0].OwningRow.Cells["GhiChu"].Value.ToString();
-
                 hang sua = db.hangs.Where(p => p.maHang.Equals(txtMaSP.Text)).SingleOrDefault();
                 sua.maHang = txtMaSP.Text;
                 sua.tenHang = txtTenSP.Text;
@@ -147,7 +138,17 @@ namespace QLShop_QA
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
+            new FormAdmin().Show();
+            this.Hide();
+        }
 
+        private void FormQLHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn thoát hay không ?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (rs == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

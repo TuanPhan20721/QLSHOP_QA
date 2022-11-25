@@ -377,6 +377,7 @@ namespace QLShop_QA
             this.Name = "FormQLHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý sản phẩm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormQLHang_FormClosing);
             this.Load += new System.EventHandler(this.FormQLHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
             this.ResumeLayout(false);
