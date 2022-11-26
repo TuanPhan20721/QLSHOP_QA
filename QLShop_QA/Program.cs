@@ -16,7 +16,7 @@ namespace QLShop_QA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormQLHoaDon());
+            Application.Run(new FormDangNhap());
         }
     }
 }

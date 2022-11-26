@@ -49,5 +49,11 @@ namespace QLShop_QA
                 e.Cancel = true;
             }
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            new FormDangNhap().Show();
+            this.Hide();
+        }
     }
 }

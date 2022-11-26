@@ -37,6 +37,12 @@ namespace QLShop_QA
             this.btnThem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvHoaDon = new System.Windows.Forms.DataGridView();
+            this.maHDBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpNgayBan = new System.Windows.Forms.DateTimePicker();
             this.cboMaKH = new System.Windows.Forms.ComboBox();
             this.cboMaNV = new System.Windows.Forms.ComboBox();
@@ -57,7 +63,7 @@ namespace QLShop_QA
             this.cboMaHang = new System.Windows.Forms.ComboBox();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.dgvHoaDon = new System.Windows.Forms.DataGridView();
+            this.dgvChiTietHoaDon = new System.Windows.Forms.DataGridView();
             this.maHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,9 +82,12 @@ namespace QLShop_QA
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnInHD = new System.Windows.Forms.Button();
+            this.btnThemHoaDon = new System.Windows.Forms.Button();
+            this.btnSuaHD = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,7 +103,7 @@ namespace QLShop_QA
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(607, 669);
+            this.btnTimKiem.Location = new System.Drawing.Point(608, 788);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
             this.btnTimKiem.TabIndex = 36;
@@ -104,17 +113,17 @@ namespace QLShop_QA
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(461, 630);
+            this.btnLuu.Location = new System.Drawing.Point(462, 749);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.Size = new System.Drawing.Size(104, 23);
             this.btnLuu.TabIndex = 35;
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Text = "Thêm sản phẩm ";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(320, 630);
+            this.btnSua.Location = new System.Drawing.Point(321, 749);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 34;
@@ -124,33 +133,34 @@ namespace QLShop_QA
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(193, 630);
+            this.btnXoa.Location = new System.Drawing.Point(182, 749);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(87, 23);
             this.btnXoa.TabIndex = 33;
-            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Text = "Xóa sản phẩm";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(54, 630);
+            this.btnThem.Location = new System.Drawing.Point(55, 749);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 32;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "Xóa trắng";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(436, 671);
+            this.txtTimKiem.Location = new System.Drawing.Point(437, 790);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(169, 20);
             this.txtTimKiem.TabIndex = 37;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dgvHoaDon);
             this.groupBox1.Controls.Add(this.dtpNgayBan);
             this.groupBox1.Controls.Add(this.cboMaKH);
             this.groupBox1.Controls.Add(this.cboMaNV);
@@ -169,10 +179,61 @@ namespace QLShop_QA
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(28, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(655, 173);
+            this.groupBox1.Size = new System.Drawing.Size(655, 238);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
+            // 
+            // dgvHoaDon
+            // 
+            this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maHDBan,
+            this.maNhanVien,
+            this.ngayBan,
+            this.maKhach,
+            this.tongTien});
+            this.dgvHoaDon.Location = new System.Drawing.Point(6, 173);
+            this.dgvHoaDon.Name = "dgvHoaDon";
+            this.dgvHoaDon.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHoaDon.Size = new System.Drawing.Size(642, 44);
+            this.dgvHoaDon.TabIndex = 20;
+            // 
+            // maHDBan
+            // 
+            this.maHDBan.DataPropertyName = "maHDBan";
+            this.maHDBan.HeaderText = "Mã hóa đơn bán";
+            this.maHDBan.Name = "maHDBan";
+            this.maHDBan.Width = 120;
+            // 
+            // maNhanVien
+            // 
+            this.maNhanVien.DataPropertyName = "maNhanVien";
+            this.maNhanVien.HeaderText = "Mã nhân viên";
+            this.maNhanVien.Name = "maNhanVien";
+            this.maNhanVien.Width = 120;
+            // 
+            // ngayBan
+            // 
+            this.ngayBan.DataPropertyName = "ngayBan";
+            this.ngayBan.HeaderText = "Ngày bán";
+            this.ngayBan.Name = "ngayBan";
+            this.ngayBan.Width = 120;
+            // 
+            // maKhach
+            // 
+            this.maKhach.DataPropertyName = "maKhach";
+            this.maKhach.HeaderText = "Mã khách";
+            this.maKhach.Name = "maKhach";
+            this.maKhach.Width = 120;
+            // 
+            // tongTien
+            // 
+            this.tongTien.DataPropertyName = "tongTien";
+            this.tongTien.HeaderText = "Tổng tiền";
+            this.tongTien.Name = "tongTien";
+            this.tongTien.Width = 120;
             // 
             // dtpNgayBan
             // 
@@ -316,7 +377,7 @@ namespace QLShop_QA
             this.groupBox2.Controls.Add(this.cboMaHang);
             this.groupBox2.Controls.Add(this.txtTongTien);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.dgvHoaDon);
+            this.groupBox2.Controls.Add(this.dgvChiTietHoaDon);
             this.groupBox2.Controls.Add(this.txtThanhTien);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.txtDonGia);
@@ -328,12 +389,12 @@ namespace QLShop_QA
             this.groupBox2.Controls.Add(this.txtSoluong);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(27, 249);
+            this.groupBox2.Location = new System.Drawing.Point(28, 368);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(656, 375);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin các mặt hàng";
+            this.groupBox2.Text = "Thông tin các sản phẩm";
             // 
             // cboMaHang
             // 
@@ -361,22 +422,22 @@ namespace QLShop_QA
             this.label16.TabIndex = 17;
             this.label16.Text = "Tổng tiền:";
             // 
-            // dgvHoaDon
+            // dgvChiTietHoaDon
             // 
-            this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiTietHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maHang,
             this.tenHang,
             this.soLuong,
             this.donGia,
             this.giamGia,
             this.thanhTien});
-            this.dgvHoaDon.Location = new System.Drawing.Point(6, 121);
-            this.dgvHoaDon.Name = "dgvHoaDon";
-            this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHoaDon.Size = new System.Drawing.Size(644, 217);
-            this.dgvHoaDon.TabIndex = 16;
-            this.dgvHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
+            this.dgvChiTietHoaDon.Location = new System.Drawing.Point(6, 121);
+            this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
+            this.dgvChiTietHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(644, 217);
+            this.dgvChiTietHoaDon.TabIndex = 16;
+            this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
             // 
             // maHang
             // 
@@ -487,6 +548,7 @@ namespace QLShop_QA
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(110, 20);
             this.txtSoluong.TabIndex = 7;
+            this.txtSoluong.TextChanged += new System.EventHandler(this.txtSoluong_TextChanged);
             // 
             // label11
             // 
@@ -508,18 +570,43 @@ namespace QLShop_QA
             // 
             // btnInHD
             // 
-            this.btnInHD.Location = new System.Drawing.Point(607, 630);
+            this.btnInHD.Location = new System.Drawing.Point(608, 749);
             this.btnInHD.Name = "btnInHD";
             this.btnInHD.Size = new System.Drawing.Size(75, 23);
             this.btnInHD.TabIndex = 40;
             this.btnInHD.Text = "In hóa đơn";
             this.btnInHD.UseVisualStyleBackColor = true;
+            this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
             // 
-            // FromLapHD
+            // btnThemHoaDon
+            // 
+            this.btnThemHoaDon.Location = new System.Drawing.Point(596, 314);
+            this.btnThemHoaDon.Name = "btnThemHoaDon";
+            this.btnThemHoaDon.Size = new System.Drawing.Size(88, 23);
+            this.btnThemHoaDon.TabIndex = 41;
+            this.btnThemHoaDon.Text = "Thêm hóa đơn";
+            this.btnThemHoaDon.UseVisualStyleBackColor = true;
+            this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHoaDon_Click);
+            // 
+            // btnSuaHD
+            // 
+            this.btnSuaHD.BackColor = System.Drawing.Color.LightCyan;
+            this.btnSuaHD.ForeColor = System.Drawing.Color.Black;
+            this.btnSuaHD.Location = new System.Drawing.Point(501, 314);
+            this.btnSuaHD.Name = "btnSuaHD";
+            this.btnSuaHD.Size = new System.Drawing.Size(88, 23);
+            this.btnSuaHD.TabIndex = 42;
+            this.btnSuaHD.Text = "Sửa hoá đơn";
+            this.btnSuaHD.UseVisualStyleBackColor = false;
+            this.btnSuaHD.Click += new System.EventHandler(this.btnSuaHD_Click);
+            // 
+            // FormLapHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 708);
+            this.ClientSize = new System.Drawing.Size(716, 838);
+            this.Controls.Add(this.btnSuaHD);
+            this.Controls.Add(this.btnThemHoaDon);
             this.Controls.Add(this.btnInHD);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -530,16 +617,17 @@ namespace QLShop_QA
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.label1);
-            this.Name = "FromLapHD";
+            this.Name = "FormLapHD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý hóa đơn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FromLapHD_FormClosing);
             this.Load += new System.EventHandler(this.FromQLHoaDon_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,7 +661,7 @@ namespace QLShop_QA
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridView dgvHoaDon;
+        private System.Windows.Forms.DataGridView dgvChiTietHoaDon;
         private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtDonGia;
@@ -594,5 +682,13 @@ namespace QLShop_QA
         private System.Windows.Forms.DataGridViewTextBoxColumn thanhTien;
         private System.Windows.Forms.ComboBox cboMaHang;
         private System.Windows.Forms.DateTimePicker dtpNgayBan;
+        private System.Windows.Forms.Button btnThemHoaDon;
+        private System.Windows.Forms.Button btnSuaHD;
+        private System.Windows.Forms.DataGridView dgvHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maHDBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maKhach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tongTien;
     }
 }

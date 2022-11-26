@@ -49,14 +49,16 @@ namespace QLShop_QA
             this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCTHD)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnInHD
             // 
-            this.btnInHD.Location = new System.Drawing.Point(703, 87);
+            this.btnInHD.Location = new System.Drawing.Point(337, 319);
             this.btnInHD.Name = "btnInHD";
             this.btnInHD.Size = new System.Drawing.Size(75, 23);
             this.btnInHD.TabIndex = 51;
@@ -71,7 +73,7 @@ namespace QLShop_QA
             this.groupBox2.Size = new System.Drawing.Size(656, 245);
             this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin các mặt hàng";
+            this.groupBox2.Text = "Thông tin hóa đơn";
             // 
             // dgvHoaDon
             // 
@@ -135,7 +137,7 @@ namespace QLShop_QA
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(703, 138);
+            this.btnXoa.Location = new System.Drawing.Point(175, 319);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 44;
@@ -152,7 +154,7 @@ namespace QLShop_QA
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(703, 186);
+            this.btnThoat.Location = new System.Drawing.Point(256, 319);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
             this.btnThoat.TabIndex = 42;
@@ -180,7 +182,7 @@ namespace QLShop_QA
             this.donGia,
             this.giamGia,
             this.thanhTien});
-            this.dtgCTHD.Location = new System.Drawing.Point(30, 358);
+            this.dtgCTHD.Location = new System.Drawing.Point(6, 19);
             this.dtgCTHD.Name = "dtgCTHD";
             this.dtgCTHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgCTHD.Size = new System.Drawing.Size(650, 217);
@@ -221,13 +223,24 @@ namespace QLShop_QA
             this.thanhTien.DataPropertyName = "thanhTien";
             this.thanhTien.HeaderText = "Thành tiền";
             this.thanhTien.Name = "thanhTien";
+            this.thanhTien.Width = 109;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dtgCTHD);
+            this.groupBox1.Location = new System.Drawing.Point(30, 348);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(656, 245);
+            this.groupBox1.TabIndex = 54;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin sản phẩm";
             // 
             // FormQLHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 596);
-            this.Controls.Add(this.dtgCTHD);
+            this.ClientSize = new System.Drawing.Size(792, 621);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnInHD);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnTimKiem);
@@ -243,6 +256,7 @@ namespace QLShop_QA
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCTHD)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,6 +277,7 @@ namespace QLShop_QA
         private System.Windows.Forms.DataGridViewTextBoxColumn maKhach;
         private System.Windows.Forms.DataGridViewTextBoxColumn tongTien;
         private System.Windows.Forms.DataGridView dtgCTHD;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn maHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuong;

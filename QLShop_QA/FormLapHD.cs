@@ -20,7 +20,7 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                dgvHoaDon.DataSource = from a in db.chiTietHDBans
+                dgvChiTietHoaDon.DataSource = from a in db.chiTietHDBans
                                         from b in db.hangs
                                         where a.maHang == b.maHang 
                                         select new
@@ -32,7 +32,7 @@ namespace QLShop_QA
                                             giamGia = a.giamGia,
                                             thanhTien = a.thanhTien,
                                         };
-              
+                
             }
         }
         private void clear()
@@ -132,7 +132,7 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                dgvHoaDon.DataSource = db.HDBans.Where(p => p.maHDBan.Equals(txtTimKiem.Text));
+                dgvChiTietHoaDon.DataSource = db.HDBans.Where(p => p.maHDBan.Equals(txtTimKiem.Text));
             }
             txtTimKiem.Clear();
         }
@@ -140,7 +140,7 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                string mahd = dgvHoaDon.SelectedCells[0].OwningRow.Cells["maHang"].Value.ToString();
+                string mahd = dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["maHang"].Value.ToString();
                 chiTietHDBan delete = db.chiTietHDBans.Where(p => p.maHang.Equals(mahd)).SingleOrDefault();
                 db.chiTietHDBans.DeleteOnSubmit(delete);
                 db.SubmitChanges();
@@ -169,12 +169,12 @@ namespace QLShop_QA
             numrow = e.RowIndex;
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                cboMaHang.Text = dgvHoaDon.Rows[numrow].Cells[0].Value.ToString();
-                txtTenHang.Text = dgvHoaDon.Rows[numrow].Cells[1].Value.ToString();
-                txtSoluong.Text = dgvHoaDon.Rows[numrow].Cells[2].Value.ToString();
-                txtDonGia.Text = dgvHoaDon.Rows[numrow].Cells[3].Value.ToString();
-                txtGiamGia.Text = dgvHoaDon.Rows[numrow].Cells[4].Value.ToString();
-                txtThanhTien.Text = dgvHoaDon.Rows[numrow].Cells[5].Value.ToString();
+                cboMaHang.Text = dgvChiTietHoaDon.Rows[numrow].Cells[0].Value.ToString();
+                txtTenHang.Text = dgvChiTietHoaDon.Rows[numrow].Cells[1].Value.ToString();
+                txtSoluong.Text = dgvChiTietHoaDon.Rows[numrow].Cells[2].Value.ToString();
+                txtDonGia.Text = dgvChiTietHoaDon.Rows[numrow].Cells[3].Value.ToString();
+                txtGiamGia.Text = dgvChiTietHoaDon.Rows[numrow].Cells[4].Value.ToString();
+                txtThanhTien.Text = dgvChiTietHoaDon.Rows[numrow].Cells[5].Value.ToString();
             }
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
@@ -188,15 +188,9 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                //Thêm hóa đơn
-                    HDBan themHDB = new HDBan();
-                    themHDB.maHDBan = txtMaHD.Text;
-                    themHDB.maNhanVien = cboMaNV.Text;
-                    themHDB.ngayBan = DateTime.Parse(dtpNgayBan.Text);
-                    themHDB.maKhach = cboMaKH.Text;
-                    themHDB.tongTien = double.Parse(txtTongTien.Text);
-                    db.HDBans.InsertOnSubmit(themHDB);
-                //Thêm CTHD khi có hóa đơn
+                try
+                {
+                    //Thêm CTHD khi có hóa đơn
                     chiTietHDBan themCTHD = new chiTietHDBan();
                     themCTHD.maHang = cboMaHang.Text;
                     themCTHD.maHDBan = txtMaHD.Text;
@@ -206,6 +200,12 @@ namespace QLShop_QA
                     themCTHD.thanhTien = double.Parse(txtThanhTien.Text);
                     db.chiTietHDBans.InsertOnSubmit(themCTHD);
                     db.SubmitChanges();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Thông tin bị thiếu hoặc sai!!!!", "Thông báo!", MessageBoxButtons.OK);
+                }
+            
             }
             loadDB();
         }
@@ -228,7 +228,7 @@ namespace QLShop_QA
                 }
                 catch (Exception)
                 {
-                    throw;
+                    MessageBox.Show("Chỉ được nhập số!!!!", "Thông báo!", MessageBoxButtons.OK);
                 }
             }
             loadDB();
@@ -255,6 +255,105 @@ namespace QLShop_QA
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btnInHD_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThemHoaDon_Click(object sender, EventArgs e)
+        {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                try
+                {
+                    HDBan themHDB = new HDBan();
+                    themHDB.maHDBan = txtMaHD.Text;
+                    themHDB.maNhanVien = cboMaNV.Text;
+                    themHDB.ngayBan = DateTime.Parse(dtpNgayBan.Text);
+                    themHDB.maKhach = cboMaKH.Text;
+                    themHDB.tongTien = double.Parse(txtTongTien.Text);
+                    db.HDBans.InsertOnSubmit(themHDB);
+                    db.SubmitChanges();
+                    MessageBox.Show("Thêm hóa đơn thành công", "Thông báo!", MessageBoxButtons.OK);
+                    loadDGV_HDB();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Thêm hóa đơn thất bại!!!!", "Thông báo!", MessageBoxButtons.OK);
+                }
+                //Thêm hóa đơn
+               
+            }
+            loadDB();
+        }
+        public void loadDGV_HDB()
+        {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                dgvHoaDon.DataSource = from a in db.HDBans
+                                       where a.maHDBan == txtMaHD.Text
+                                       select new
+                                       {
+                                           maHDBan = a.maHDBan,
+                                           maNhanVien = a.maNhanVien,
+                                           ngayBan = a.ngayBan,
+                                           maKhach = a.maKhach,
+                                           tongTien = a.tongTien,
+                                       };
+            }
+        }
+        private void btnSuaHD_Click(object sender, EventArgs e)
+        {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                try
+                {
+                    HDBan sua = db.HDBans.Where(p => p.maHDBan.Equals(txtMaHD.Text)).SingleOrDefault();
+                    sua.maNhanVien = cboMaNV.Text;
+                    sua.maKhach = cboMaKH.Text;
+                    sua.ngayBan = DateTime.Parse(dtpNgayBan.Text);
+                    db.SubmitChanges();
+                    MessageBox.Show("Sửa hóa đơn thành công", "Thông báo!", MessageBoxButtons.OK);
+                    loadDGV_HDB();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Sửa hóa đơn thất bại!!!!", "Thông báo!", MessageBoxButtons.OK);
+                }
+              
+            }
+            loadDB();
+        }
+
+        private void txtSoluong_TextChanged(object sender, EventArgs e)
+        {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                try
+                {
+                    if (txtSoluong.Text != "" && txtGiamGia.Text =="")
+                    {
+                        txtThanhTien.Text = (double.Parse(txtSoluong.Text) * double.Parse(txtDonGia.Text)).ToString();
+                        db.SubmitChanges();
+                    }else
+                    if(txtSoluong.Text != "")
+                    {
+                        txtThanhTien.Text = (double.Parse(txtSoluong.Text) * double.Parse(txtDonGia.Text) * double.Parse(txtGiamGia.Text)).ToString();
+                        db.SubmitChanges();
+                    }
+                    else
+                    {
+                        txtSoluong.Text = "";
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Chỉ được nhập số!!!!", "Thông báo!", MessageBoxButtons.OK);
+                }
+            }
+            loadDB();
         }
     }
 }

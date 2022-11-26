@@ -81,7 +81,7 @@ namespace QLShop_QA
                     }else
                         if (nv.idQuyen == 2)
                     {
-                        new FormLapHD().Show();
+                        new FormNhanVien().Show();
 
                     }
                     this.Hide();

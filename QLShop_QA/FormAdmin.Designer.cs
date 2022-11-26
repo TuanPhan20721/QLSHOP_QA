@@ -29,25 +29,15 @@ namespace QLShop_QA
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnQLKH = new System.Windows.Forms.Button();
             this.btnQLNV = new System.Windows.Forms.Button();
             this.btnQLSP = new System.Windows.Forms.Button();
             this.btnQLHD = new System.Windows.Forms.Button();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnQLKH
-            // 
-            this.btnQLKH.Location = new System.Drawing.Point(170, 75);
-            this.btnQLKH.Name = "btnQLKH";
-            this.btnQLKH.Size = new System.Drawing.Size(453, 39);
-            this.btnQLKH.TabIndex = 1;
-            this.btnQLKH.Text = "Quản lý khách hàng";
-            this.btnQLKH.UseVisualStyleBackColor = true;
-            this.btnQLKH.Click += new System.EventHandler(this.btnQLKH_Click);
             // 
             // btnQLNV
             // 
-            this.btnQLNV.Location = new System.Drawing.Point(170, 156);
+            this.btnQLNV.Location = new System.Drawing.Point(184, 49);
             this.btnQLNV.Name = "btnQLNV";
             this.btnQLNV.Size = new System.Drawing.Size(453, 39);
             this.btnQLNV.TabIndex = 2;
@@ -57,7 +47,7 @@ namespace QLShop_QA
             // 
             // btnQLSP
             // 
-            this.btnQLSP.Location = new System.Drawing.Point(170, 238);
+            this.btnQLSP.Location = new System.Drawing.Point(184, 131);
             this.btnQLSP.Name = "btnQLSP";
             this.btnQLSP.Size = new System.Drawing.Size(453, 39);
             this.btnQLSP.TabIndex = 3;
@@ -67,7 +57,7 @@ namespace QLShop_QA
             // 
             // btnQLHD
             // 
-            this.btnQLHD.Location = new System.Drawing.Point(170, 321);
+            this.btnQLHD.Location = new System.Drawing.Point(184, 214);
             this.btnQLHD.Name = "btnQLHD";
             this.btnQLHD.Size = new System.Drawing.Size(453, 39);
             this.btnQLHD.TabIndex = 4;
@@ -75,15 +65,25 @@ namespace QLShop_QA
             this.btnQLHD.UseVisualStyleBackColor = true;
             this.btnQLHD.Click += new System.EventHandler(this.btnQLHD_Click);
             // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Location = new System.Drawing.Point(362, 292);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(104, 39);
+            this.btnDangXuat.TabIndex = 5;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.btnQLHD);
             this.Controls.Add(this.btnQLSP);
             this.Controls.Add(this.btnQLNV);
-            this.Controls.Add(this.btnQLKH);
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdmin";
@@ -93,10 +93,9 @@ namespace QLShop_QA
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnQLKH;
         private System.Windows.Forms.Button btnQLNV;
         private System.Windows.Forms.Button btnQLSP;
         private System.Windows.Forms.Button btnQLHD;
+        private System.Windows.Forms.Button btnDangXuat;
     }
 }
