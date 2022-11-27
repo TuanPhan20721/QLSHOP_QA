@@ -163,3 +163,5 @@ INSERT INTO chiTietHDBan VALUES
 	select * from chiTietHDBan
 	select * from nhanVien
 	select * from quyen
+	select * from chiTietHDBan
+	where maHDBan = 'HD06'

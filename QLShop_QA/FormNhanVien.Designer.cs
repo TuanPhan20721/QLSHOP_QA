@@ -36,9 +36,9 @@ namespace QLShop_QA
             // 
             // btnQLKH
             // 
-            this.btnQLKH.Location = new System.Drawing.Point(174, 115);
+            this.btnQLKH.Location = new System.Drawing.Point(49, 59);
             this.btnQLKH.Name = "btnQLKH";
-            this.btnQLKH.Size = new System.Drawing.Size(453, 39);
+            this.btnQLKH.Size = new System.Drawing.Size(117, 73);
             this.btnQLKH.TabIndex = 2;
             this.btnQLKH.Text = "Quản lý khách hàng";
             this.btnQLKH.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@ namespace QLShop_QA
             // 
             // btnQuanLyHoaDon
             // 
-            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(174, 206);
+            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(239, 59);
             this.btnQuanLyHoaDon.Name = "btnQuanLyHoaDon";
-            this.btnQuanLyHoaDon.Size = new System.Drawing.Size(453, 39);
+            this.btnQuanLyHoaDon.Size = new System.Drawing.Size(117, 73);
             this.btnQuanLyHoaDon.TabIndex = 3;
             this.btnQuanLyHoaDon.Text = "Quản lý hóa đơn";
             this.btnQuanLyHoaDon.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@ namespace QLShop_QA
             // 
             // btnDangXuat
             // 
-            this.btnDangXuat.Location = new System.Drawing.Point(339, 290);
+            this.btnDangXuat.Location = new System.Drawing.Point(152, 162);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(104, 39);
             this.btnDangXuat.TabIndex = 4;
@@ -68,7 +68,7 @@ namespace QLShop_QA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(430, 237);
             this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.btnQuanLyHoaDon);
             this.Controls.Add(this.btnQLKH);

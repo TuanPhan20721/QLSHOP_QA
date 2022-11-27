@@ -247,7 +247,7 @@ namespace QLShop_QA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 485);
+            this.ClientSize = new System.Drawing.Size(735, 485);
             this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.cboGioiTinh);
             this.Controls.Add(this.txtTenNV);

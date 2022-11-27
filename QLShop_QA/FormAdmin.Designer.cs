@@ -37,9 +37,9 @@ namespace QLShop_QA
             // 
             // btnQLNV
             // 
-            this.btnQLNV.Location = new System.Drawing.Point(184, 49);
+            this.btnQLNV.Location = new System.Drawing.Point(40, 63);
             this.btnQLNV.Name = "btnQLNV";
-            this.btnQLNV.Size = new System.Drawing.Size(453, 39);
+            this.btnQLNV.Size = new System.Drawing.Size(107, 75);
             this.btnQLNV.TabIndex = 2;
             this.btnQLNV.Text = "Quản lý nhân viên";
             this.btnQLNV.UseVisualStyleBackColor = true;
@@ -47,9 +47,9 @@ namespace QLShop_QA
             // 
             // btnQLSP
             // 
-            this.btnQLSP.Location = new System.Drawing.Point(184, 131);
+            this.btnQLSP.Location = new System.Drawing.Point(191, 63);
             this.btnQLSP.Name = "btnQLSP";
-            this.btnQLSP.Size = new System.Drawing.Size(453, 39);
+            this.btnQLSP.Size = new System.Drawing.Size(112, 75);
             this.btnQLSP.TabIndex = 3;
             this.btnQLSP.Text = "Quản lý sản phẩm";
             this.btnQLSP.UseVisualStyleBackColor = true;
@@ -57,9 +57,9 @@ namespace QLShop_QA
             // 
             // btnQLHD
             // 
-            this.btnQLHD.Location = new System.Drawing.Point(184, 214);
+            this.btnQLHD.Location = new System.Drawing.Point(339, 63);
             this.btnQLHD.Name = "btnQLHD";
-            this.btnQLHD.Size = new System.Drawing.Size(453, 39);
+            this.btnQLHD.Size = new System.Drawing.Size(107, 75);
             this.btnQLHD.TabIndex = 4;
             this.btnQLHD.Text = "Quản lý hóa đơn";
             this.btnQLHD.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@ namespace QLShop_QA
             // 
             // btnDangXuat
             // 
-            this.btnDangXuat.Location = new System.Drawing.Point(362, 292);
+            this.btnDangXuat.Location = new System.Drawing.Point(191, 170);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(104, 39);
+            this.btnDangXuat.Size = new System.Drawing.Size(112, 39);
             this.btnDangXuat.TabIndex = 5;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@ namespace QLShop_QA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(483, 253);
             this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.btnQLHD);
             this.Controls.Add(this.btnQLSP);

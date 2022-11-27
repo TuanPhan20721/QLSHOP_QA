@@ -78,5 +78,11 @@ namespace QLShop_QA
                                        };
             }
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            new FormAdmin().Show();
+            this.Hide();
+        }
     }
 }

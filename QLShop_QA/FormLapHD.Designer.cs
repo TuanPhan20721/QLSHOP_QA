@@ -84,6 +84,7 @@ namespace QLShop_QA
             this.btnInHD = new System.Windows.Forms.Button();
             this.btnThemHoaDon = new System.Windows.Forms.Button();
             this.btnSuaHD = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -251,6 +252,7 @@ namespace QLShop_QA
             this.cboMaKH.Size = new System.Drawing.Size(164, 21);
             this.cboMaKH.TabIndex = 17;
             this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
+            this.cboMaKH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboMaKH_KeyDown);
             // 
             // cboMaNV
             // 
@@ -260,6 +262,7 @@ namespace QLShop_QA
             this.cboMaNV.Size = new System.Drawing.Size(179, 21);
             this.cboMaNV.TabIndex = 16;
             this.cboMaNV.SelectedIndexChanged += new System.EventHandler(this.cboMaNV_SelectedIndexChanged);
+            this.cboMaNV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboMaNV_KeyDown);
             // 
             // txtDT
             // 
@@ -404,6 +407,7 @@ namespace QLShop_QA
             this.cboMaHang.Size = new System.Drawing.Size(110, 21);
             this.cboMaHang.TabIndex = 19;
             this.cboMaHang.SelectedIndexChanged += new System.EventHandler(this.cboMaHang_SelectedIndexChanged);
+            this.cboMaHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboMaHang_KeyDown);
             // 
             // txtTongTien
             // 
@@ -437,7 +441,7 @@ namespace QLShop_QA
             this.dgvChiTietHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(644, 217);
             this.dgvChiTietHoaDon.TabIndex = 16;
-            this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
+            this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
             // 
             // maHang
             // 
@@ -479,9 +483,9 @@ namespace QLShop_QA
             // 
             this.txtThanhTien.Location = new System.Drawing.Point(486, 83);
             this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.ReadOnly = true;
             this.txtThanhTien.Size = new System.Drawing.Size(110, 20);
             this.txtThanhTien.TabIndex = 15;
-            this.txtThanhTien.TextChanged += new System.EventHandler(this.txtThanhTien_TextChanged);
             // 
             // label15
             // 
@@ -600,11 +604,22 @@ namespace QLShop_QA
             this.btnSuaHD.UseVisualStyleBackColor = false;
             this.btnSuaHD.Click += new System.EventHandler(this.btnSuaHD_Click);
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(608, 12);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.TabIndex = 43;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // FormLapHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 838);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnSuaHD);
             this.Controls.Add(this.btnThemHoaDon);
             this.Controls.Add(this.btnInHD);
@@ -690,5 +705,6 @@ namespace QLShop_QA
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn maKhach;
         private System.Windows.Forms.DataGridViewTextBoxColumn tongTien;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

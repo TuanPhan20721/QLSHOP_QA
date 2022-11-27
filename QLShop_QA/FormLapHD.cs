@@ -18,22 +18,7 @@ namespace QLShop_QA
         }
         public void loadDB()
         {
-            using (QLShop_QADataContext db = new QLShop_QADataContext())
-            {
-                dgvChiTietHoaDon.DataSource = from a in db.chiTietHDBans
-                                        from b in db.hangs
-                                        where a.maHang == b.maHang 
-                                        select new
-                                        {
-                                            maHang = a.maHang,
-                                            tenHang = b.tenHang,
-                                            soLuong = a.soLuong,
-                                            donGia = b.donGiaBan,
-                                            giamGia = a.giamGia,
-                                            thanhTien = a.thanhTien,
-                                        };
-                
-            }
+
         }
         private void clear()
         {
@@ -51,6 +36,8 @@ namespace QLShop_QA
             txtSoluong.Text = "";
             txtThanhTien.Text = "0";
             txtTongTien.Text = "0";
+            dgvChiTietHoaDon.Rows.Clear();
+            dgvHoaDon.Rows.Clear();
         }
         private void FromQLHoaDon_Load(object sender, EventArgs e)
         {
@@ -64,7 +51,7 @@ namespace QLShop_QA
 
                 var dataHH = db.hangs.Select(k => k.maHang);
                 cboMaHang.DataSource = dataHH;
-             
+          
             }
             loadDB();
             clear();
@@ -108,6 +95,9 @@ namespace QLShop_QA
                 {
                     throw;
                 }
+                txtThanhTien.Clear();
+                txtSoluong.Clear();
+                txtGiamGia.Clear();
             }
         }
 
@@ -159,31 +149,29 @@ namespace QLShop_QA
                 sua.donGia = double.Parse(txtDonGia.Text);
                 sua.thanhTien = double.Parse(txtThanhTien.Text);
                 db.SubmitChanges();
+                LoadDGV_CTHD();
             }
             loadDB();
         }
-
-        private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void LoadDGV_CTHD()
         {
-            int numrow;
-            numrow = e.RowIndex;
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                cboMaHang.Text = dgvChiTietHoaDon.Rows[numrow].Cells[0].Value.ToString();
-                txtTenHang.Text = dgvChiTietHoaDon.Rows[numrow].Cells[1].Value.ToString();
-                txtSoluong.Text = dgvChiTietHoaDon.Rows[numrow].Cells[2].Value.ToString();
-                txtDonGia.Text = dgvChiTietHoaDon.Rows[numrow].Cells[3].Value.ToString();
-                txtGiamGia.Text = dgvChiTietHoaDon.Rows[numrow].Cells[4].Value.ToString();
-                txtThanhTien.Text = dgvChiTietHoaDon.Rows[numrow].Cells[5].Value.ToString();
-            }
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                chiTietHDBan mahdb = db.chiTietHDBans.Where(p => p.maHang.Equals(cboMaHang.Text)).SingleOrDefault();
-                txtMaHD.Text = mahdb.maHDBan;
-                db.SubmitChanges();
+                dgvChiTietHoaDon.DataSource = from a in db.chiTietHDBans
+                                              from b in db.hangs
+                                              where a.maHang == b.maHang && a.maHDBan == txtMaHD.Text
+                                              select new
+                                              {
+                                                  maHang = a.maHang,
+                                                  tenHang = b.tenHang,
+                                                  soLuong = a.soLuong,
+                                                  donGia = b.donGiaBan,
+                                                  giamGia = a.giamGia,
+                                                  thanhTien = a.thanhTien,
+                                              };
+
             }
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
@@ -200,6 +188,9 @@ namespace QLShop_QA
                     themCTHD.thanhTien = double.Parse(txtThanhTien.Text);
                     db.chiTietHDBans.InsertOnSubmit(themCTHD);
                     db.SubmitChanges();
+                    var sum = db.chiTietHDBans.Where(c => c.maHDBan.Equals(txtMaHD.Text)).Select(c=>c.thanhTien).Sum();
+                    txtTongTien.Text = sum.ToString();
+                    LoadDGV_CTHD();
                 }
                 catch (Exception)
                 {
@@ -218,12 +209,12 @@ namespace QLShop_QA
                 {
                     if (txtGiamGia.Text != "")
                     {
-                        txtThanhTien.Text = (double.Parse(txtSoluong.Text) * double.Parse(txtDonGia.Text) * double.Parse(txtGiamGia.Text)).ToString();
+                        txtThanhTien.Text = ((double.Parse(txtSoluong.Text) * double.Parse(txtDonGia.Text)) - (double.Parse(txtGiamGia.Text)* double.Parse(txtDonGia.Text))).ToString();
                         db.SubmitChanges();
                     }
                     else
                     {
-                        txtGiamGia.Text = "0";
+                        txtGiamGia.Text = "";
                     }
                 }
                 catch (Exception)
@@ -232,20 +223,6 @@ namespace QLShop_QA
                 }
             }
             loadDB();
-        }
-
-        private void txtThanhTien_TextChanged(object sender, EventArgs e)
-        {
-            //using (QLShop_QADataContext db = new QLShop_QADataContext())
-            //{
-            //    var thanhtien = from cthd in db.chiTietHDBans
-            //                from hdb in db.HDBans
-            //                where cthd.maHDBan == hdb.maHDBan
-            //                select new { cthd.thanhTien };
-            //var sum = db.chiTietHDBans.Select(c => c.thanhTien).Sum();
-            //txtTongTien.Text = sum.ToString();
-            //}
-            //loadDB();
         }
 
         private void FromLapHD_FormClosing(object sender, FormClosingEventArgs e)
@@ -354,6 +331,42 @@ namespace QLShop_QA
                 }
             }
             loadDB();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            new FormNhanVien().Show();
+            this.Hide();
+        }
+
+        private void dgvChiTietHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow;
+            numrow = e.RowIndex;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                cboMaHang.Text = dgvChiTietHoaDon.Rows[numrow].Cells[0].Value.ToString();
+                txtTenHang.Text = dgvChiTietHoaDon.Rows[numrow].Cells[1].Value.ToString();
+                txtSoluong.Text = dgvChiTietHoaDon.Rows[numrow].Cells[2].Value.ToString();
+                txtDonGia.Text = dgvChiTietHoaDon.Rows[numrow].Cells[3].Value.ToString();
+                txtGiamGia.Text = dgvChiTietHoaDon.Rows[numrow].Cells[4].Value.ToString();
+                txtThanhTien.Text = dgvChiTietHoaDon.Rows[numrow].Cells[5].Value.ToString();
+            }
+        }
+
+        private void cboMaKH_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cboMaNV_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cboMaHang_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }
