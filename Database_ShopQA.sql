@@ -102,17 +102,17 @@ SET DATEFORMAT dmy
 ------ KHÁCH HÀNG ----------
 INSERT INTO khach VALUES
 ('KH01',N'Nguyễn Tấn Phát','Nam',N'Tân Phú','02316548265','09/02/2001'),
-('KH02',N'Nguyễn Tấn Hưng','Nữ',N'Quận 8','0214535126','03/08/2001'),
+('KH02',N'Nguyễn Tấn Hưng',N'Nữ',N'Quận 8','0214535126','03/08/2001'),
 ('KH03',N'Trần Khang','Nam',N'Quận 5','0356201489','05/03/2001'),
 ('KH04',N'Nguyễn Thái Khương ','Nam',N'Tân Phú','0945632157','04/02/2001'),
 ('KH05',N'Phan Tuấn Long','Nam',N'Quận 1','0865236214','09/11/2001'),
 ('KH06',N'Trương Trọng Nghĩa','Nam',N'Quận 6','0845213654','04/10/2001'),
 ('KH07',N'Bùi Huy Hoàng','Nam',N'Tân Bình','0845215426','15/06/2001'),
-('KH08',N'Trần Đoàn Bảo Ngọc','Nữ',N'Phú Nhuận','0215436584','01/11/2001'),
+('KH08',N'Trần Đoàn Bảo Ngọc',N'Nữ',N'Phú Nhuận','0215436584','01/11/2001'),
 ('KH09',N'Phạm Thanh Long','Nam',N'Tân Phú','0845216324','06/05/2001'),
 ('KH10',N'Phạm Hồng Quân','Nam',N'Bình Thạnh','02154876942','23/12/2001'),
-('KH11',N'Huỳnh Ngọc Thạch','Nữ',N'Gò Vấp','0215496231','13/07/2001'),
-('KH12',N'Nguyễn Thông Thái','Nữ',N'Quận 11','02316548265','01/02/2001'),
+('KH11',N'Huỳnh Ngọc Thạch',N'Nữ',N'Gò Vấp','0215496231','13/07/2001'),
+('KH12',N'Nguyễn Thông Thái',N'Nữ',N'Quận 11','02316548265','01/02/2001'),
 ('KH13',N'Huỳnh Công Tiến','Nam',N'Quận 3','0215436251','03/04/2001')
 
 -------- HÀNG HÓA ----------

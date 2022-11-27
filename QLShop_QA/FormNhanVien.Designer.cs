@@ -73,6 +73,7 @@ namespace QLShop_QA
             this.Controls.Add(this.btnQuanLyHoaDon);
             this.Controls.Add(this.btnQLKH);
             this.Name = "FormNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNhanVien";
             this.ResumeLayout(false);
 

@@ -50,6 +50,7 @@ namespace QLShop_QA
             this.thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.btnXoaCTHD = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCTHD)).BeginInit();
@@ -134,6 +135,7 @@ namespace QLShop_QA
             this.btnTimKiem.TabIndex = 47;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnXoa
             // 
@@ -236,11 +238,22 @@ namespace QLShop_QA
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // btnXoaCTHD
+            // 
+            this.btnXoaCTHD.Location = new System.Drawing.Point(591, 590);
+            this.btnXoaCTHD.Name = "btnXoaCTHD";
+            this.btnXoaCTHD.Size = new System.Drawing.Size(95, 23);
+            this.btnXoaCTHD.TabIndex = 56;
+            this.btnXoaCTHD.Text = "Xóa sản phẩm";
+            this.btnXoaCTHD.UseVisualStyleBackColor = true;
+            this.btnXoaCTHD.Click += new System.EventHandler(this.btnXoaCTHD_Click);
+            // 
             // FormQLHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 621);
+            this.ClientSize = new System.Drawing.Size(724, 644);
+            this.Controls.Add(this.btnXoaCTHD);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnInHD);
@@ -285,5 +298,6 @@ namespace QLShop_QA
         private System.Windows.Forms.DataGridViewTextBoxColumn giamGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn thanhTien;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnXoaCTHD;
     }
 }
