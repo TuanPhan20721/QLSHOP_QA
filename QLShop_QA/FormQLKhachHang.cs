@@ -21,7 +21,16 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                dgvKhachHang.DataSource = from kh in db.khaches select kh;
+                dgvKhachHang.DataSource = from kh in db.khaches
+                                     select new
+                                     {
+                                         maKhachHang = kh.makhach,
+                                         tenKhachHang = kh.tenkhach,
+                                         gioiTinh = kh.gioiTinh,
+                                         diaChi = kh.diachi,
+                                         dienThoai = kh.dienthoai,
+                                         ngaySinh = kh.ngaySinh
+                                     };
             }
         }
 
@@ -64,21 +73,23 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                string maKH = dgvKhachHang.SelectedCells[0].OwningRow.Cells["makhach"].Value.ToString();
-                string tenKH = dgvKhachHang.SelectedCells[0].OwningRow.Cells["tenkhach"].Value.ToString();
-                string gioitinh = dgvKhachHang.SelectedCells[0].OwningRow.Cells["gioiTinh"].Value.ToString();
-                string diachi = dgvKhachHang.SelectedCells[0].OwningRow.Cells["diachi"].Value.ToString();
-                string dienthoai = dgvKhachHang.SelectedCells[0].OwningRow.Cells["dienthoai"].Value.ToString();
-                DateTime? ngaysinh = dgvKhachHang.SelectedCells[0].OwningRow.Cells["ngaySinh"].Value == null ?
-                    null : (DateTime?)dgvKhachHang.SelectedCells[0].OwningRow.Cells["ngaySinh"].Value;
+                try
+                {
+                    khach sua = db.khaches.Where(p => p.makhach.Equals(txtMaKH.Text)).Single();
+                    sua.makhach = txtMaKH.Text;
+                    sua.tenkhach = txtTenKH.Text;
+                    sua.gioiTinh = cboGioiTinh.Text;
+                    sua.diachi = txtDC.Text;
+                    sua.dienthoai = txtDT.Text;
+                    sua.ngaySinh = DateTime.Parse(dtpNgaySinh.Text);
 
-                khach sua = db.khaches.Where(p => p.makhach.Equals(maKH)).SingleOrDefault();
-                sua.tenkhach = tenKH;
-                sua.gioiTinh = gioitinh;
-                sua.diachi = diachi;
-                sua.dienthoai = dienthoai;
-                sua.ngaySinh = ngaysinh;
-                db.SubmitChanges();
+                    db.SubmitChanges();
+                    MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Không được sửa mã khách hàng!!!!", "Thông báo!", MessageBoxButtons.OK);
+                }
             }
             loadDB();
         }
@@ -118,6 +129,21 @@ namespace QLShop_QA
             if (rs == DialogResult.No)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow;
+            numrow = e.RowIndex;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                txtMaKH.Text = dgvKhachHang.Rows[numrow].Cells[0].Value.ToString();
+                txtTenKH.Text = dgvKhachHang.Rows[numrow].Cells[1].Value.ToString();
+                cboGioiTinh.Text = dgvKhachHang.Rows[numrow].Cells[2].Value.ToString();
+                txtDC.Text = dgvKhachHang.Rows[numrow].Cells[3].Value.ToString();
+                txtDT.Text = dgvKhachHang.Rows[numrow].Cells[4].Value.ToString();
+                dtpNgaySinh.Text = dgvKhachHang.Rows[numrow].Cells[5].Value.ToString();
             }
         }
     }

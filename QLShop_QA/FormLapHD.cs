@@ -130,10 +130,24 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                string mahd = dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["maHang"].Value.ToString();
-                chiTietHDBan delete = db.chiTietHDBans.Where(p => p.maHang.Equals(mahd)).SingleOrDefault();
-                db.chiTietHDBans.DeleteOnSubmit(delete);
-                db.SubmitChanges();
+                try
+                {
+                    string mahd = dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["maHang"].Value.ToString();
+                    chiTietHDBan delete = db.chiTietHDBans.Where(p => p.maHang.Equals(mahd)).First();
+                    
+                    //update lai so luong kho hang khi xoa
+                    hang suaSL = db.hangs.Where(p => p.maHang.Equals(cboMaHang.Text)).SingleOrDefault();
+                    suaSL.soLuong = suaSL.soLuong + double.Parse(txtSoluong.Text);
+
+                    db.chiTietHDBans.DeleteOnSubmit(delete);
+                    db.SubmitChanges();
+                    MessageBox.Show("Xoá sản phẩm thành công!!!!", "Thông báo!", MessageBoxButtons.OK);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Có lỗi xảy ra!!!!", "Thông báo!", MessageBoxButtons.OK);
+                }
+                LoadDGV_CTHD();
             }
             loadDB();
         }
@@ -186,10 +200,15 @@ namespace QLShop_QA
                     themCTHD.donGia = double.Parse(txtDonGia.Text);
                     themCTHD.giamGia = double.Parse(txtGiamGia.Text);
                     themCTHD.thanhTien = double.Parse(txtThanhTien.Text);
-                    db.chiTietHDBans.InsertOnSubmit(themCTHD);
-                    db.SubmitChanges();
+                    //db.SubmitChanges();
+                    //tinh tong tien
                     var sum = db.chiTietHDBans.Where(c => c.maHDBan.Equals(txtMaHD.Text)).Select(c=>c.thanhTien).Sum();
                     txtTongTien.Text = sum.ToString();
+                    //Cap nhat lai so luong trong kho hang
+                    hang suaSL = db.hangs.Where(p => p.maHang.Equals(cboMaHang.Text)).SingleOrDefault();
+                    suaSL.soLuong  = suaSL.soLuong - double.Parse(txtSoluong.Text);
+                    db.chiTietHDBans.InsertOnSubmit(themCTHD);
+                    db.SubmitChanges();
                     LoadDGV_CTHD();
                 }
                 catch (Exception)

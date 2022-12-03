@@ -23,7 +23,6 @@ C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormN
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormQLHang.resources
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormQLKhachHang.resources
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormQLNhanVien.resources
-C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormTimKiem.resources
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormLapHD.resources
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormQLHoaDon.resources
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.Properties.Resources.resources

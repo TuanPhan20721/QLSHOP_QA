@@ -36,6 +36,7 @@ namespace QLShop_QA
             // 
             // btnQLKH
             // 
+            this.btnQLKH.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnQLKH.Location = new System.Drawing.Point(49, 59);
             this.btnQLKH.Name = "btnQLKH";
             this.btnQLKH.Size = new System.Drawing.Size(117, 73);
@@ -46,6 +47,7 @@ namespace QLShop_QA
             // 
             // btnQuanLyHoaDon
             // 
+            this.btnQuanLyHoaDon.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnQuanLyHoaDon.Location = new System.Drawing.Point(239, 59);
             this.btnQuanLyHoaDon.Name = "btnQuanLyHoaDon";
             this.btnQuanLyHoaDon.Size = new System.Drawing.Size(117, 73);
@@ -56,6 +58,7 @@ namespace QLShop_QA
             // 
             // btnDangXuat
             // 
+            this.btnDangXuat.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnDangXuat.Location = new System.Drawing.Point(152, 162);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(104, 39);

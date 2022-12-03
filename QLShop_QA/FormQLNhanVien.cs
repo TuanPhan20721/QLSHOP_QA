@@ -20,6 +20,36 @@ namespace QLShop_QA
         {
             loadDB();
         }
+        public void loadDB()
+        {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                gtvQLNV.DataSource = from nv in db.nhanViens
+                                     select new
+                                     {
+                                         maNhanVien = nv.maNhanVien,
+                                         tenNhanVien = nv.tenNhanVien,
+                                         gioiTinh = nv.gioiTinh,
+                                         diaChi = nv.diaChi,
+                                         dienThoai = nv.dienThoai,
+                                         ngaySinh = nv.ngaySinh
+                                        };
+            }
+        }
+        private void gtvQLNV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow;
+            numrow = e.RowIndex;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                txtMaNV.Text = gtvQLNV.Rows[numrow].Cells[0].Value.ToString();
+                txtTenNV.Text = gtvQLNV.Rows[numrow].Cells[1].Value.ToString();
+                cboGioiTinh.Text = gtvQLNV.Rows[numrow].Cells[2].Value.ToString();
+                txtDC.Text = gtvQLNV.Rows[numrow].Cells[3].Value.ToString();
+                txtDT.Text = gtvQLNV.Rows[numrow].Cells[4].Value.ToString();
+                dtpNgaySinh.Text = gtvQLNV.Rows[numrow].Cells[5].Value.ToString();
+            }
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             txtDC.Clear();
@@ -45,22 +75,24 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                string manv = gtvQLNV.SelectedCells[0].OwningRow.Cells["maNhanVien"].Value.ToString();
-                string tennv = gtvQLNV.SelectedCells[0].OwningRow.Cells["tenNhanVien"].Value.ToString();
-                string gioitinh = gtvQLNV.SelectedCells[0].OwningRow.Cells["gioiTinh"].Value.ToString();
-                string diachi = gtvQLNV.SelectedCells[0].OwningRow.Cells["diaChi"].Value.ToString();
-                string dienthoai = gtvQLNV.SelectedCells[0].OwningRow.Cells["dienThoai"].Value.ToString();
-                DateTime? ngaysinh = gtvQLNV.SelectedCells[0].OwningRow.Cells["ngaySinh"].Value == null?
-                    null : (DateTime?)gtvQLNV.SelectedCells[0].OwningRow.Cells["ngaySinh"].Value;
+                try
+                {
+                    nhanVien sua = db.nhanViens.Where(p => p.maNhanVien.Equals(txtMaNV.Text)).Single();
+                    sua.maNhanVien = txtMaNV.Text;
+                    sua.tenNhanVien = txtTenNV.Text;
+                    sua.gioiTinh = cboGioiTinh.Text;
+                    sua.diaChi = txtDC.Text;
+                    sua.dienThoai = txtDT.Text;
+                    sua.ngaySinh = DateTime.Parse(dtpNgaySinh.Text);
 
-                nhanVien sua = db.nhanViens.Where(p => p.maNhanVien.Equals(manv)).SingleOrDefault();
-                sua.tenNhanVien = tennv;
-                sua.gioiTinh = gioitinh;
-                sua.diaChi = diachi;
-                sua.dienThoai = dienthoai;
-                sua.ngaySinh = ngaysinh;
-
-                db.SubmitChanges();
+                    db.SubmitChanges();
+                    MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Không được sửa mã nhân viên!!!!", "Thông báo!", MessageBoxButtons.OK);
+                }
+               
             }
             loadDB();
         }
@@ -69,13 +101,6 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                //string manv = gtvQLNV.SelectedCells[0].OwningRow.Cells["maNhanVien"].Value.ToString();
-                //string tennv = gtvQLNV.SelectedCells[1].OwningRow.Cells["tenNhanVien"].Value.ToString();
-                //string gioitinh = gtvQLNV.SelectedCells[2].OwningRow.Cells["gioiTinh"].Value.ToString();
-                //string diachi = gtvQLNV.SelectedCells[3].OwningRow.Cells["diaChi"].Value.ToString();
-                //string dienthoai = gtvQLNV.SelectedCells[4].OwningRow.Cells["dienThoai"].Value.ToString();
-                //DateTime ngaysinh = (DateTime)gtvQLNV.SelectedCells[5].OwningRow.Cells["ngaySinh"].Value;
-
                 nhanVien them = new nhanVien();
                 them.maNhanVien = txtMaNV.Text;
                 them.tenNhanVien = txtTenNV.Text;
@@ -104,13 +129,7 @@ namespace QLShop_QA
             new FormAdmin().Show();
             this.Hide();
         }
-        public void loadDB()
-        {
-            using(QLShop_QADataContext db = new QLShop_QADataContext())
-            {
-                gtvQLNV.DataSource = from nv in db.nhanViens select nv;
-            }    
-        }
+       
 
         private void cboGioiTinh_KeyDown(object sender, KeyEventArgs e)
         {
@@ -125,5 +144,7 @@ namespace QLShop_QA
                 e.Cancel = true;
             }
         }
+
+       
     }
 }

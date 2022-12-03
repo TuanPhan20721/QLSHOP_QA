@@ -108,6 +108,7 @@ namespace QLShop_QA
             // NS
             // 
             this.NS.AutoSize = true;
+            this.NS.ForeColor = System.Drawing.Color.DarkCyan;
             this.NS.Location = new System.Drawing.Point(22, 175);
             this.NS.Name = "NS";
             this.NS.Size = new System.Drawing.Size(65, 13);
@@ -117,6 +118,7 @@ namespace QLShop_QA
             // DT
             // 
             this.DT.AutoSize = true;
+            this.DT.ForeColor = System.Drawing.Color.DarkCyan;
             this.DT.Location = new System.Drawing.Point(245, 175);
             this.DT.Name = "DT";
             this.DT.Size = new System.Drawing.Size(71, 13);
@@ -126,6 +128,7 @@ namespace QLShop_QA
             // DC
             // 
             this.DC.AutoSize = true;
+            this.DC.ForeColor = System.Drawing.Color.DarkCyan;
             this.DC.Location = new System.Drawing.Point(259, 133);
             this.DC.Name = "DC";
             this.DC.Size = new System.Drawing.Size(49, 13);
@@ -135,6 +138,7 @@ namespace QLShop_QA
             // GT
             // 
             this.GT.AutoSize = true;
+            this.GT.ForeColor = System.Drawing.Color.DarkCyan;
             this.GT.Location = new System.Drawing.Point(248, 88);
             this.GT.Name = "GT";
             this.GT.Size = new System.Drawing.Size(65, 13);
@@ -144,6 +148,7 @@ namespace QLShop_QA
             // lbtennv
             // 
             this.lbtennv.AutoSize = true;
+            this.lbtennv.ForeColor = System.Drawing.Color.DarkCyan;
             this.lbtennv.Location = new System.Drawing.Point(12, 133);
             this.lbtennv.Name = "lbtennv";
             this.lbtennv.Size = new System.Drawing.Size(75, 13);
@@ -153,6 +158,7 @@ namespace QLShop_QA
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
             this.label2.Location = new System.Drawing.Point(16, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
@@ -161,6 +167,7 @@ namespace QLShop_QA
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnTimKiem.Location = new System.Drawing.Point(619, 477);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(64, 23);
@@ -171,6 +178,7 @@ namespace QLShop_QA
             // 
             // btnThoat
             // 
+            this.btnThoat.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnThoat.Location = new System.Drawing.Point(608, 12);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
@@ -181,6 +189,7 @@ namespace QLShop_QA
             // 
             // btnLuu
             // 
+            this.btnLuu.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnLuu.Location = new System.Drawing.Point(296, 478);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
@@ -191,6 +200,7 @@ namespace QLShop_QA
             // 
             // btnSua
             // 
+            this.btnSua.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnSua.Location = new System.Drawing.Point(215, 477);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
@@ -201,6 +211,7 @@ namespace QLShop_QA
             // 
             // btnXoa
             // 
+            this.btnXoa.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnXoa.Location = new System.Drawing.Point(134, 477);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
@@ -211,6 +222,7 @@ namespace QLShop_QA
             // 
             // btnThem
             // 
+            this.btnThem.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnThem.Location = new System.Drawing.Point(53, 477);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
@@ -321,6 +333,7 @@ namespace QLShop_QA
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
             this.label3.Location = new System.Drawing.Point(506, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
@@ -330,6 +343,7 @@ namespace QLShop_QA
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkCyan;
             this.label4.Location = new System.Drawing.Point(488, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);

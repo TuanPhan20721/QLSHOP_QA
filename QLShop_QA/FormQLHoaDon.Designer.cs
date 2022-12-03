@@ -59,6 +59,7 @@ namespace QLShop_QA
             // 
             // btnInHD
             // 
+            this.btnInHD.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnInHD.Location = new System.Drawing.Point(337, 319);
             this.btnInHD.Name = "btnInHD";
             this.btnInHD.Size = new System.Drawing.Size(75, 23);
@@ -129,6 +130,7 @@ namespace QLShop_QA
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnTimKiem.Location = new System.Drawing.Point(605, 319);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
@@ -139,6 +141,7 @@ namespace QLShop_QA
             // 
             // btnXoa
             // 
+            this.btnXoa.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnXoa.Location = new System.Drawing.Point(256, 319);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
@@ -230,6 +233,7 @@ namespace QLShop_QA
             // 
             // btnThoat
             // 
+            this.btnThoat.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnThoat.Location = new System.Drawing.Point(611, 12);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
@@ -240,6 +244,7 @@ namespace QLShop_QA
             // 
             // btnXoaCTHD
             // 
+            this.btnXoaCTHD.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnXoaCTHD.Location = new System.Drawing.Point(591, 590);
             this.btnXoaCTHD.Name = "btnXoaCTHD";
             this.btnXoaCTHD.Size = new System.Drawing.Size(95, 23);

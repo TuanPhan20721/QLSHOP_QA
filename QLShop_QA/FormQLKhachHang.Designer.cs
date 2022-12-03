@@ -51,18 +51,32 @@ namespace QLShop_QA
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.maKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvKhachHang
             // 
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maKhachHang,
+            this.tenKhachHang,
+            this.gioiTinh,
+            this.diaChi,
+            this.dienThoai,
+            this.ngaySinh});
             this.dgvKhachHang.Location = new System.Drawing.Point(50, 178);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhachHang.Size = new System.Drawing.Size(633, 238);
             this.dgvKhachHang.TabIndex = 7;
+            this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
             // 
             // label1
             // 
@@ -126,6 +140,7 @@ namespace QLShop_QA
             // NS
             // 
             this.NS.AutoSize = true;
+            this.NS.ForeColor = System.Drawing.Color.DarkCyan;
             this.NS.Location = new System.Drawing.Point(477, 133);
             this.NS.Name = "NS";
             this.NS.Size = new System.Drawing.Size(54, 13);
@@ -135,6 +150,7 @@ namespace QLShop_QA
             // DT
             // 
             this.DT.AutoSize = true;
+            this.DT.ForeColor = System.Drawing.Color.DarkCyan;
             this.DT.Location = new System.Drawing.Point(477, 88);
             this.DT.Name = "DT";
             this.DT.Size = new System.Drawing.Size(55, 13);
@@ -144,6 +160,7 @@ namespace QLShop_QA
             // DC
             // 
             this.DC.AutoSize = true;
+            this.DC.ForeColor = System.Drawing.Color.DarkCyan;
             this.DC.Location = new System.Drawing.Point(259, 133);
             this.DC.Name = "DC";
             this.DC.Size = new System.Drawing.Size(40, 13);
@@ -153,6 +170,7 @@ namespace QLShop_QA
             // GT
             // 
             this.GT.AutoSize = true;
+            this.GT.ForeColor = System.Drawing.Color.DarkCyan;
             this.GT.Location = new System.Drawing.Point(259, 88);
             this.GT.Name = "GT";
             this.GT.Size = new System.Drawing.Size(50, 13);
@@ -162,6 +180,7 @@ namespace QLShop_QA
             // lbtennv
             // 
             this.lbtennv.AutoSize = true;
+            this.lbtennv.ForeColor = System.Drawing.Color.DarkCyan;
             this.lbtennv.Location = new System.Drawing.Point(2, 133);
             this.lbtennv.Name = "lbtennv";
             this.lbtennv.Size = new System.Drawing.Size(86, 13);
@@ -171,6 +190,7 @@ namespace QLShop_QA
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
             this.label2.Location = new System.Drawing.Point(6, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
@@ -179,6 +199,7 @@ namespace QLShop_QA
             // 
             // btnThoat
             // 
+            this.btnThoat.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnThoat.Location = new System.Drawing.Point(605, 12);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
@@ -196,6 +217,7 @@ namespace QLShop_QA
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnTimKiem.Location = new System.Drawing.Point(619, 440);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(64, 23);
@@ -206,6 +228,7 @@ namespace QLShop_QA
             // 
             // btnLuu
             // 
+            this.btnLuu.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnLuu.Location = new System.Drawing.Point(293, 442);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
@@ -216,6 +239,7 @@ namespace QLShop_QA
             // 
             // btnSua
             // 
+            this.btnSua.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnSua.Location = new System.Drawing.Point(212, 441);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
@@ -226,6 +250,7 @@ namespace QLShop_QA
             // 
             // btnXoa
             // 
+            this.btnXoa.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnXoa.Location = new System.Drawing.Point(131, 441);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
@@ -236,6 +261,7 @@ namespace QLShop_QA
             // 
             // btnThem
             // 
+            this.btnThem.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnThem.Location = new System.Drawing.Point(50, 441);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
@@ -243,6 +269,46 @@ namespace QLShop_QA
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // maKhachHang
+            // 
+            this.maKhachHang.DataPropertyName = "maKhachHang";
+            this.maKhachHang.HeaderText = "Mã khách hàng";
+            this.maKhachHang.Name = "maKhachHang";
+            this.maKhachHang.Width = 107;
+            // 
+            // tenKhachHang
+            // 
+            this.tenKhachHang.DataPropertyName = "tenKhachHang";
+            this.tenKhachHang.HeaderText = "Tên khách hàng";
+            this.tenKhachHang.Name = "tenKhachHang";
+            this.tenKhachHang.Width = 110;
+            // 
+            // gioiTinh
+            // 
+            this.gioiTinh.DataPropertyName = "gioiTinh";
+            this.gioiTinh.HeaderText = "Giới tính";
+            this.gioiTinh.Name = "gioiTinh";
+            this.gioiTinh.Width = 90;
+            // 
+            // diaChi
+            // 
+            this.diaChi.DataPropertyName = "diaChi";
+            this.diaChi.HeaderText = "Địa chỉ";
+            this.diaChi.Name = "diaChi";
+            this.diaChi.Width = 90;
+            // 
+            // dienThoai
+            // 
+            this.dienThoai.DataPropertyName = "dienThoai";
+            this.dienThoai.HeaderText = "Điện thoại";
+            this.dienThoai.Name = "dienThoai";
+            // 
+            // ngaySinh
+            // 
+            this.ngaySinh.DataPropertyName = "ngaySinh";
+            this.ngaySinh.HeaderText = "Ngày sinh";
+            this.ngaySinh.Name = "ngaySinh";
             // 
             // FormQLKhachHang
             // 
@@ -305,5 +371,11 @@ namespace QLShop_QA
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dienThoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinh;
     }
 }
