@@ -108,7 +108,7 @@ namespace QLShop_QA
             this.btnTimKiem.Location = new System.Drawing.Point(608, 788);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
-            this.btnTimKiem.TabIndex = 36;
+            this.btnTimKiem.TabIndex = 14;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
@@ -119,7 +119,7 @@ namespace QLShop_QA
             this.btnLuu.Location = new System.Drawing.Point(462, 749);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(104, 23);
-            this.btnLuu.TabIndex = 35;
+            this.btnLuu.TabIndex = 9;
             this.btnLuu.Text = "Thêm sản phẩm ";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -130,7 +130,7 @@ namespace QLShop_QA
             this.btnSua.Location = new System.Drawing.Point(321, 749);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 34;
+            this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -141,7 +141,7 @@ namespace QLShop_QA
             this.btnXoa.Location = new System.Drawing.Point(182, 749);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(87, 23);
-            this.btnXoa.TabIndex = 33;
+            this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa sản phẩm";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -152,7 +152,7 @@ namespace QLShop_QA
             this.btnThem.Location = new System.Drawing.Point(55, 749);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 32;
+            this.btnThem.TabIndex = 12;
             this.btnThem.Text = "Xóa trắng";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -162,7 +162,7 @@ namespace QLShop_QA
             this.txtTimKiem.Location = new System.Drawing.Point(437, 790);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(169, 20);
-            this.txtTimKiem.TabIndex = 37;
+            this.txtTimKiem.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -192,6 +192,7 @@ namespace QLShop_QA
             // 
             // dgvHoaDon
             // 
+            this.dgvHoaDon.AllowUserToOrderColumns = true;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maHDBan,
@@ -204,7 +205,7 @@ namespace QLShop_QA
             this.dgvHoaDon.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHoaDon.Size = new System.Drawing.Size(642, 44);
-            this.dgvHoaDon.TabIndex = 20;
+            this.dgvHoaDon.TabIndex = 0;
             // 
             // maHDBan
             // 
@@ -247,7 +248,7 @@ namespace QLShop_QA
             this.dtpNgayBan.Location = new System.Drawing.Point(109, 67);
             this.dtpNgayBan.Name = "dtpNgayBan";
             this.dtpNgayBan.Size = new System.Drawing.Size(179, 20);
-            this.dtpNgayBan.TabIndex = 18;
+            this.dtpNgayBan.TabIndex = 0;
             // 
             // cboMaKH
             // 
@@ -255,7 +256,7 @@ namespace QLShop_QA
             this.cboMaKH.Location = new System.Drawing.Point(455, 32);
             this.cboMaKH.Name = "cboMaKH";
             this.cboMaKH.Size = new System.Drawing.Size(164, 21);
-            this.cboMaKH.TabIndex = 17;
+            this.cboMaKH.TabIndex = 2;
             this.cboMaKH.SelectedIndexChanged += new System.EventHandler(this.cboMaKH_SelectedIndexChanged);
             this.cboMaKH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboMaKH_KeyDown);
             // 
@@ -265,7 +266,7 @@ namespace QLShop_QA
             this.cboMaNV.Location = new System.Drawing.Point(109, 103);
             this.cboMaNV.Name = "cboMaNV";
             this.cboMaNV.Size = new System.Drawing.Size(179, 21);
-            this.cboMaNV.TabIndex = 16;
+            this.cboMaNV.TabIndex = 3;
             this.cboMaNV.SelectedIndexChanged += new System.EventHandler(this.cboMaNV_SelectedIndexChanged);
             this.cboMaNV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboMaNV_KeyDown);
             // 
@@ -275,7 +276,7 @@ namespace QLShop_QA
             this.txtDT.Name = "txtDT";
             this.txtDT.ReadOnly = true;
             this.txtDT.Size = new System.Drawing.Size(163, 20);
-            this.txtDT.TabIndex = 15;
+            this.txtDT.TabIndex = 0;
             // 
             // label9
             // 
@@ -293,7 +294,7 @@ namespace QLShop_QA
             this.txtDC.Name = "txtDC";
             this.txtDC.ReadOnly = true;
             this.txtDC.Size = new System.Drawing.Size(163, 20);
-            this.txtDC.TabIndex = 13;
+            this.txtDC.TabIndex = 0;
             // 
             // label8
             // 
@@ -311,7 +312,7 @@ namespace QLShop_QA
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.ReadOnly = true;
             this.txtTenKH.Size = new System.Drawing.Size(163, 20);
-            this.txtTenKH.TabIndex = 11;
+            this.txtTenKH.TabIndex = 0;
             // 
             // label7
             // 
@@ -359,7 +360,7 @@ namespace QLShop_QA
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.ReadOnly = true;
             this.txtTenNV.Size = new System.Drawing.Size(179, 20);
-            this.txtTenNV.TabIndex = 3;
+            this.txtTenNV.TabIndex = 0;
             // 
             // label3
             // 
@@ -418,7 +419,7 @@ namespace QLShop_QA
             this.cboMaHang.Location = new System.Drawing.Point(110, 42);
             this.cboMaHang.Name = "cboMaHang";
             this.cboMaHang.Size = new System.Drawing.Size(110, 21);
-            this.cboMaHang.TabIndex = 19;
+            this.cboMaHang.TabIndex = 6;
             this.cboMaHang.SelectedIndexChanged += new System.EventHandler(this.cboMaHang_SelectedIndexChanged);
             this.cboMaHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboMaHang_KeyDown);
             // 
@@ -428,7 +429,7 @@ namespace QLShop_QA
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(110, 20);
-            this.txtTongTien.TabIndex = 18;
+            this.txtTongTien.TabIndex = 0;
             // 
             // label16
             // 
@@ -442,6 +443,7 @@ namespace QLShop_QA
             // 
             // dgvChiTietHoaDon
             // 
+            this.dgvChiTietHoaDon.AllowUserToOrderColumns = true;
             this.dgvChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maHang,
@@ -454,7 +456,7 @@ namespace QLShop_QA
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(644, 217);
-            this.dgvChiTietHoaDon.TabIndex = 16;
+            this.dgvChiTietHoaDon.TabIndex = 0;
             this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
             // 
             // maHang
@@ -499,7 +501,7 @@ namespace QLShop_QA
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
             this.txtThanhTien.Size = new System.Drawing.Size(110, 20);
-            this.txtThanhTien.TabIndex = 15;
+            this.txtThanhTien.TabIndex = 0;
             // 
             // label15
             // 
@@ -516,7 +518,7 @@ namespace QLShop_QA
             this.txtDonGia.Location = new System.Drawing.Point(486, 42);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(110, 20);
-            this.txtDonGia.TabIndex = 13;
+            this.txtDonGia.TabIndex = 0;
             // 
             // label14
             // 
@@ -533,7 +535,7 @@ namespace QLShop_QA
             this.txtGiamGia.Location = new System.Drawing.Point(293, 83);
             this.txtGiamGia.Name = "txtGiamGia";
             this.txtGiamGia.Size = new System.Drawing.Size(115, 20);
-            this.txtGiamGia.TabIndex = 11;
+            this.txtGiamGia.TabIndex = 8;
             this.txtGiamGia.TextChanged += new System.EventHandler(this.txtGiamGia_TextChanged);
             // 
             // label13
@@ -552,7 +554,7 @@ namespace QLShop_QA
             this.txtTenHang.Name = "txtTenHang";
             this.txtTenHang.ReadOnly = true;
             this.txtTenHang.Size = new System.Drawing.Size(115, 20);
-            this.txtTenHang.TabIndex = 9;
+            this.txtTenHang.TabIndex = 0;
             // 
             // label12
             // 
@@ -598,7 +600,7 @@ namespace QLShop_QA
             this.btnInHD.Location = new System.Drawing.Point(608, 749);
             this.btnInHD.Name = "btnInHD";
             this.btnInHD.Size = new System.Drawing.Size(75, 23);
-            this.btnInHD.TabIndex = 40;
+            this.btnInHD.TabIndex = 13;
             this.btnInHD.Text = "In hóa đơn";
             this.btnInHD.UseVisualStyleBackColor = true;
             this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
@@ -609,7 +611,7 @@ namespace QLShop_QA
             this.btnThemHoaDon.Location = new System.Drawing.Point(596, 314);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
             this.btnThemHoaDon.Size = new System.Drawing.Size(88, 23);
-            this.btnThemHoaDon.TabIndex = 41;
+            this.btnThemHoaDon.TabIndex = 4;
             this.btnThemHoaDon.Text = "Thêm hóa đơn";
             this.btnThemHoaDon.UseVisualStyleBackColor = true;
             this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHoaDon_Click);
@@ -618,10 +620,10 @@ namespace QLShop_QA
             // 
             this.btnSuaHD.BackColor = System.Drawing.Color.LightCyan;
             this.btnSuaHD.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnSuaHD.Location = new System.Drawing.Point(501, 314);
+            this.btnSuaHD.Location = new System.Drawing.Point(502, 314);
             this.btnSuaHD.Name = "btnSuaHD";
             this.btnSuaHD.Size = new System.Drawing.Size(88, 23);
-            this.btnSuaHD.TabIndex = 42;
+            this.btnSuaHD.TabIndex = 5;
             this.btnSuaHD.Text = "Sửa hoá đơn";
             this.btnSuaHD.UseVisualStyleBackColor = false;
             this.btnSuaHD.Click += new System.EventHandler(this.btnSuaHD_Click);
@@ -632,7 +634,7 @@ namespace QLShop_QA
             this.btnThoat.Location = new System.Drawing.Point(608, 12);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 43;
+            this.btnThoat.TabIndex = 15;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);

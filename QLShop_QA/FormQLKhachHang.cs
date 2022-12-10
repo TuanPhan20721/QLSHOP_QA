@@ -32,6 +32,7 @@ namespace QLShop_QA
                                          ngaySinh = kh.ngaySinh
                                      };
             }
+            txtMaKH.ReadOnly = true;
         }
 
         private void FormQLKhachHang_Load(object sender, EventArgs e)
@@ -55,17 +56,27 @@ namespace QLShop_QA
             txtMaKH.Clear();
             txtTenKH.Clear();
             cboGioiTinh.Text = null;
+            txtMaKH.ReadOnly = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            try
             {
-                string makh = dgvKhachHang.SelectedCells[0].OwningRow.Cells["makhach"].Value.ToString();
-                khach delete = db.khaches.Where(p => p.makhach.Equals(makh)).SingleOrDefault();
-                db.khaches.DeleteOnSubmit(delete);
-                db.SubmitChanges();
+                using (QLShop_QADataContext db = new QLShop_QADataContext())
+                {
+                    string makh = dgvKhachHang.SelectedCells[0].OwningRow.Cells["makhach"].Value.ToString();
+                    khach delete = db.khaches.Where(p => p.makhach.Equals(makh)).SingleOrDefault();
+                    db.khaches.DeleteOnSubmit(delete);
+                    db.SubmitChanges();
+                    MessageBox.Show("Xóa thành công", "Thông báo!", MessageBoxButtons.OK);
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Xóa không thành công!!!!", "Thông báo!", MessageBoxButtons.OK);
+            }
+
             loadDB();
         }
 
@@ -88,7 +99,7 @@ namespace QLShop_QA
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Không được sửa mã khách hàng!!!!", "Thông báo!", MessageBoxButtons.OK);
+                    MessageBox.Show("Có lỗi rồi!!!!", "Thông báo!", MessageBoxButtons.OK);
                 }
             }
             loadDB();
@@ -96,19 +107,28 @@ namespace QLShop_QA
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            try
             {
-                khach them = new khach();
-                them.makhach = txtMaKH.Text;
-                them.tenkhach = txtTenKH.Text;
-                them.gioiTinh = cboGioiTinh.Text;
-                them.diachi = txtDC.Text;
-                them.dienthoai = txtDT.Text;
-                them.ngaySinh = DateTime.Parse(dtpNgaySinh.Text);
+                using (QLShop_QADataContext db = new QLShop_QADataContext())
+                {
+                    khach them = new khach();
+                    them.makhach = txtMaKH.Text;
+                    them.tenkhach = txtTenKH.Text;
+                    them.gioiTinh = cboGioiTinh.Text;
+                    them.diachi = txtDC.Text;
+                    them.dienthoai = txtDT.Text;
+                    them.ngaySinh = DateTime.Parse(dtpNgaySinh.Text);
 
-                db.khaches.InsertOnSubmit(them);
-                db.SubmitChanges();
+                    db.khaches.InsertOnSubmit(them);
+                    db.SubmitChanges();
+                    MessageBox.Show("Lưu thành công", "Thông báo!", MessageBoxButtons.OK);
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Mã khách hàng đã tồn tại!!!! Hãy tạo mới", "Thông báo!", MessageBoxButtons.OK);
+            }
+
             loadDB();
         }
 
@@ -145,6 +165,7 @@ namespace QLShop_QA
                 txtDT.Text = dgvKhachHang.Rows[numrow].Cells[4].Value.ToString();
                 dtpNgaySinh.Text = dgvKhachHang.Rows[numrow].Cells[5].Value.ToString();
             }
+            txtMaKH.ReadOnly = true;
         }
     }
 }

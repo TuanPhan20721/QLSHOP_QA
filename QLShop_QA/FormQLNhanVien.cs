@@ -35,6 +35,7 @@ namespace QLShop_QA
                                          ngaySinh = nv.ngaySinh
                                         };
             }
+            txtMaNV.ReadOnly = true;
         }
         private void gtvQLNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -49,6 +50,7 @@ namespace QLShop_QA
                 txtDT.Text = gtvQLNV.Rows[numrow].Cells[4].Value.ToString();
                 dtpNgaySinh.Text = gtvQLNV.Rows[numrow].Cells[5].Value.ToString();
             }
+            txtMaNV.ReadOnly = true;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -57,16 +59,25 @@ namespace QLShop_QA
             txtMaNV.Clear();
             txtTenNV.Clear();
             cboGioiTinh.Text = null;
+            txtMaNV.ReadOnly = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            try
             {
-                string manv = gtvQLNV.SelectedCells[0].OwningRow.Cells["maNhanVien"].Value.ToString();
-                nhanVien delete = db.nhanViens.Where(p => p.maNhanVien.Equals(manv)).SingleOrDefault();
-                db.nhanViens.DeleteOnSubmit(delete);
-                db.SubmitChanges();
+                using (QLShop_QADataContext db = new QLShop_QADataContext())
+                {
+                    string manv = gtvQLNV.SelectedCells[0].OwningRow.Cells["maNhanVien"].Value.ToString();
+                    nhanVien delete = db.nhanViens.Where(p => p.maNhanVien.Equals(manv)).SingleOrDefault();
+                    db.nhanViens.DeleteOnSubmit(delete);
+                    db.SubmitChanges();
+                    MessageBox.Show("Xóa thành công!!!!", "Thông báo!", MessageBoxButtons.OK);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Xóa không thành công!!!!", "Thông báo!", MessageBoxButtons.OK);
             }
             loadDB();
         }
@@ -90,7 +101,7 @@ namespace QLShop_QA
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Không được sửa mã nhân viên!!!!", "Thông báo!", MessageBoxButtons.OK);
+                    MessageBox.Show("Có lỗi rồi!!!!", "Thông báo!", MessageBoxButtons.OK);
                 }
                
             }
@@ -99,18 +110,27 @@ namespace QLShop_QA
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            try
             {
-                nhanVien them = new nhanVien();
-                them.maNhanVien = txtMaNV.Text;
-                them.tenNhanVien = txtTenNV.Text;
-                them.gioiTinh = cboGioiTinh.Text;
-                them.diaChi = txtDC.Text;
-                them.dienThoai = txtDT.Text;
-                them.ngaySinh = DateTime.Parse(dtpNgaySinh.Text);
+                using (QLShop_QADataContext db = new QLShop_QADataContext())
+                {
+                    nhanVien them = new nhanVien();
+                    them.maNhanVien = txtMaNV.Text;
+                    them.tenNhanVien = txtTenNV.Text;
+                    them.gioiTinh = cboGioiTinh.Text;
+                    them.diaChi = txtDC.Text;
+                    them.dienThoai = txtDT.Text;
+                    them.ngaySinh = DateTime.Parse(dtpNgaySinh.Text);
 
-                db.nhanViens.InsertOnSubmit(them);
-                db.SubmitChanges();
+                    db.nhanViens.InsertOnSubmit(them);
+                    db.SubmitChanges();
+                    MessageBox.Show("Lưu thành công!!!!", "Thông báo!", MessageBoxButtons.OK);
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lưu không thành công!!!!", "Thông báo!", MessageBoxButtons.OK);
             }
             loadDB();
         }

@@ -57,18 +57,6 @@ namespace QLShop_QA
 
         private void btnDN_Click(object sender, EventArgs e)
         {
-            //if(txtTDN.Text.Trim() == "" )
-            //{
-            //    MessageBox.Show("Bạn chưa nhập tên đăng nhập!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}else
-            //if (txtMK.Text.Trim() == "")
-            //{
-            //    MessageBox.Show("Bạn chưa nhập mật khẩu!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //else 
-            //{
-            //    MessageBox.Show("Cảm ơn Bạn", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}    
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
                 var nv = db.nhanViens.FirstOrDefault(x => x.taikhoan.Equals(txtTDN.Text) && x.matkhau.Equals(txtMK.Text));
