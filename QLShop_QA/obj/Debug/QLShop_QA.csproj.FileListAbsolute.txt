@@ -4,6 +4,7 @@ C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\QLShop_QA.pdb
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
@@ -25,10 +26,10 @@ C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormQ
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormQLNhanVien.resources
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormLapHD.resources
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.FormQLHoaDon.resources
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.InHoaDonBan.resources
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.Properties.Resources.resources
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.csproj.GenerateResource.cache
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.csproj.CoreCompileInputs.cache
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.csproj.CopyComplete
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.exe
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.pdb
-C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.csproj.AssemblyReference.cache

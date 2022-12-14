@@ -16,14 +16,14 @@ namespace QLShop_QA {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReportHoaDon : ReportClass {
+    public class CRHoaDonSanPham : ReportClass {
         
-        public CrystalReportHoaDon() {
+        public CRHoaDonSanPham() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReportHoaDon.rpt";
+                return "CRHoaDonSanPham.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace QLShop_QA {
         
         public override string FullResourceName {
             get {
-                return "QLShop_QA.CrystalReportHoaDon.rpt";
+                return "QLShop_QA.CRHoaDonSanPham.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace QLShop_QA {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReportHoaDon : Component, ICachedReport {
+    public class CachedCRHoaDonSanPham : Component, ICachedReport {
         
-        public CachedCrystalReportHoaDon() {
+        public CachedCRHoaDonSanPham() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace QLShop_QA {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReportHoaDon rpt = new CrystalReportHoaDon();
+            CRHoaDonSanPham rpt = new CRHoaDonSanPham();
             rpt.Site = this.Site;
             return rpt;
         }

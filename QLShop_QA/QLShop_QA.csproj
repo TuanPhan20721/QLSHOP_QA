@@ -36,9 +36,12 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,10 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrystalReportHoaDon.cs">
+    <Compile Include="CRHoaDon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportHoaDon.rpt</DependentUpon>
+      <DependentUpon>CRHoaDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CRHoaDonSanPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRHoaDonSanPham.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormAdmin.cs">
@@ -104,6 +113,12 @@
     <Compile Include="FormLapHD.Designer.cs">
       <DependentUpon>FormLapHD.cs</DependentUpon>
     </Compile>
+    <Compile Include="InHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InHoaDonBan.Designer.cs">
+      <DependentUpon>InHoaDonBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLShop_QA.designer.cs">
@@ -111,9 +126,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLShop_QA.dbml</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CrystalReportHoaDon.rpt">
+    <EmbeddedResource Include="CRHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportHoaDon.cs</LastGenOutput>
+      <LastGenOutput>CRHoaDon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRHoaDonSanPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRHoaDonSanPham.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
@@ -138,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormQLHoaDon.resx">
       <DependentUpon>FormQLHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InHoaDonBan.resx">
+      <DependentUpon>InHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

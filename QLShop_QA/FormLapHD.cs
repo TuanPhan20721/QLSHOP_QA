@@ -158,6 +158,19 @@ namespace QLShop_QA
                     sua.soLuong = double.Parse(txtSoluong.Text);
                     sua.donGia = double.Parse(txtDonGia.Text);
                     sua.thanhTien = double.Parse(txtThanhTien.Text);
+
+                    //update lai so luong kho hang khi sua
+                    double soluong = double.Parse(dgvChiTietHoaDon.SelectedCells[2].OwningRow.Cells["soLuong"].Value.ToString());
+                    hang suaSL = db.hangs.Where(p => p.maHang.Equals(cboMaHang.Text)).SingleOrDefault();
+                    if ((soluong - double.Parse(txtSoluong.Text)) > 0)
+                    {
+                        suaSL.soLuong = suaSL.soLuong + (soluong - double.Parse(txtSoluong.Text));
+                    }
+                    else
+                    {
+                        suaSL.soLuong = suaSL.soLuong + (soluong - double.Parse(txtSoluong.Text));
+                    }
+
                     db.SubmitChanges();
                     LoadDGV_CTHD();
                     MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK);
@@ -266,7 +279,7 @@ namespace QLShop_QA
                 {
                     if (txtGiamGia.Text != "")
                     {
-                        txtThanhTien.Text = ((double.Parse(txtSoluong.Text) * double.Parse(txtDonGia.Text)) - (double.Parse(txtGiamGia.Text)* double.Parse(txtDonGia.Text))).ToString();
+                        txtThanhTien.Text = ((double.Parse(txtSoluong.Text) * double.Parse(txtDonGia.Text)) - double.Parse(txtSoluong.Text)*(double.Parse(txtGiamGia.Text)* double.Parse(txtDonGia.Text))).ToString();
                         db.SubmitChanges();
                     }
                     else
@@ -276,7 +289,7 @@ namespace QLShop_QA
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Chỉ được nhập số!!!!", "Thông báo!", MessageBoxButtons.OK);
+                    MessageBox.Show("Có lỗi xảy ra!!!!", "Thông báo!", MessageBoxButtons.OK);
                 }
             }
         }
@@ -292,7 +305,27 @@ namespace QLShop_QA
 
         private void btnInHD_Click(object sender, EventArgs e)
         {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                   var hoaDonBan = from a in db.chiTietHDBans
+                                   from b in db.hangs
+                                   where a.maHang == b.maHang && a.maHDBan == txtMaHD.Text
+                                   select new
+                                        {
+                                            maHang = a.maHang,
+                                            tenHang = b.tenHang,
+                                            soLuong = Convert.ToDouble(a.soLuong),
+                                            donGia = Convert.ToDouble(b.donGiaBan),
+                                            giamGia = Convert.ToDouble(a.giamGia),
+                                            thanhTien = Convert.ToDouble(a.thanhTien),
+                                        };
 
+                CRHoaDonSanPham r = new CRHoaDonSanPham();
+                r.SetDataSource(hoaDonBan);
+                InHoaDonBan f = new InHoaDonBan();
+                f.cRVHoaDonBan.ReportSource = r;
+                f.ShowDialog();
+            }
         }
 
         private void btnThemHoaDon_Click(object sender, EventArgs e)
@@ -355,17 +388,18 @@ namespace QLShop_QA
             {
                 try
                 {
-                    if (txtSoluong.Text != "" && txtGiamGia.Text =="")
+                    if (txtSoluong.Text != "" && txtGiamGia.Text == "")
                     {
-                        txtThanhTien.Text = (double.Parse(txtSoluong.Text) * double.Parse(txtDonGia.Text)).ToString();
-                        db.SubmitChanges();
-                    }else
-                    if(txtSoluong.Text != "")
-                    {
-                        txtThanhTien.Text = (double.Parse(txtSoluong.Text) * double.Parse(txtDonGia.Text) * double.Parse(txtGiamGia.Text)).ToString();
+                        txtThanhTien.Text = (double.Parse(txtSoluong.Text) * double.Parse(txtDonGia.Text)).ToString(); 
                         db.SubmitChanges();
                     }
                     else
+                    if(txtSoluong.Text !="" && txtGiamGia.Text != "")
+                    {
+                        txtThanhTien.Text = ((double.Parse(txtSoluong.Text) * double.Parse(txtDonGia.Text)) - double.Parse(txtSoluong.Text) * (double.Parse(txtGiamGia.Text) * double.Parse(txtDonGia.Text))).ToString();
+                        db.SubmitChanges();
+                    }
+                    if(txtSoluong.Text == "" && txtGiamGia.Text !="")
                     {
                         txtSoluong.Text = "";
                     }

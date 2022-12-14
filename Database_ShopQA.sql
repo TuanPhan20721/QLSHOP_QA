@@ -159,10 +159,8 @@ INSERT INTO chiTietHDBan VALUES
 ('HD04','H09',1,200000,0.2,0),
 ('HD05','H12',1,220000,0.1,0)
 
-	select * from quyen
 	select * from nhanVien
 	select * from HDBan
 	select * from chiTietHDBan
+	select * from hang
 	select * from quyen
-	select * from chiTietHDBan
-	where maHDBan = 'HD06'

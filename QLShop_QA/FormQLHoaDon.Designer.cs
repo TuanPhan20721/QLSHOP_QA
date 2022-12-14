@@ -66,6 +66,7 @@ namespace QLShop_QA
             this.btnInHD.TabIndex = 51;
             this.btnInHD.Text = "In hóa đơn";
             this.btnInHD.UseVisualStyleBackColor = true;
+            this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
             // 
             // groupBox2
             // 

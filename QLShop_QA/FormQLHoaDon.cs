@@ -125,5 +125,26 @@ namespace QLShop_QA
             }
             txtTimKiem.Clear();
         }
+
+        private void btnInHD_Click(object sender, EventArgs e)
+        {
+            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            {
+                var hoaDonBan = db.HDBans.Select(c => new
+                {
+                    c.maHDBan,
+                    c.maNhanVien,
+                    ngayBan = Convert.ToDateTime(c.ngayBan),
+                    c.maKhach,
+                    tongTien = Convert.ToDouble(c.tongTien),
+                }).ToList();
+
+                CRHoaDon r = new CRHoaDon();
+                r.SetDataSource(hoaDonBan);
+                InHoaDonBan f = new InHoaDonBan();
+                f.cRVHoaDonBan.ReportSource = r;
+                f.ShowDialog();
+            }
+        }
     }
 }

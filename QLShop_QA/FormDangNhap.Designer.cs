@@ -88,6 +88,7 @@ namespace QLShop_QA
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(189, 20);
             this.txtMK.TabIndex = 4;
+            this.txtMK.UseSystemPasswordChar = true;
             this.txtMK.Leave += new System.EventHandler(this.txtMK_Leave);
             // 
             // btnThoat
