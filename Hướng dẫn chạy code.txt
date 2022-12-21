@@ -1,0 +1,19 @@
+công cụ:
+ - visual studio 2019
+ - SQl server
+
+Sau khi tải file về:
+Bước 1:
+	Khởi chạy database 	
+Bước 2:
+	click QLShop_QA.sln để khởi dạy đồ án trên visual studio 2019
+	nhấn vào start để chạy chương trình 
+Bước 3:
+ đăng nhập: thì chúng ta sẽ đăng nhập với tài khoản bên dưới 
+	    bạn có thể thay đổi tài khoản bằng cách sửa lại dữ liệu trong 
+	    database
+ tk: vantuan   mk: 123 truy cập quyền admin
+ tk: huynhphat mk: 123 truy cập quyền nhanvien
+
+Như vậy là thanh công rồi nhé có gì ko hiểu thì ib cho mình
+

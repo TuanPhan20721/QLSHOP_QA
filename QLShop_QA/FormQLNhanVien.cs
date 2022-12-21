@@ -32,7 +32,10 @@ namespace QLShop_QA
                                          gioiTinh = nv.gioiTinh,
                                          diaChi = nv.diaChi,
                                          dienThoai = nv.dienThoai,
-                                         ngaySinh = nv.ngaySinh
+                                         ngaySinh = nv.ngaySinh,
+                                         taiKhoan = nv.taikhoan,
+                                         matKhau = nv.matkhau,
+                                         idQuyen = nv.idQuyen
                                         };
             }
             txtMaNV.ReadOnly = true;
@@ -49,6 +52,10 @@ namespace QLShop_QA
                 txtDC.Text = gtvQLNV.Rows[numrow].Cells[3].Value.ToString();
                 txtDT.Text = gtvQLNV.Rows[numrow].Cells[4].Value.ToString();
                 dtpNgaySinh.Text = gtvQLNV.Rows[numrow].Cells[5].Value.ToString();
+                txtTaiKhoan.Text = gtvQLNV.Rows[numrow].Cells[6].Value.ToString();
+                txtMatKhau.Text = gtvQLNV.Rows[numrow].Cells[7].Value.ToString();
+                cboQuyen.Text = gtvQLNV.Rows[numrow].Cells[8].Value.ToString();
+
             }
             txtMaNV.ReadOnly = true;
         }
@@ -58,6 +65,9 @@ namespace QLShop_QA
             txtDT.Clear();
             txtMaNV.Clear();
             txtTenNV.Clear();
+            txtTaiKhoan.Clear();
+            txtMatKhau.Clear();
+            cboQuyen.Text = "";
             cboGioiTinh.Text = null;
             txtMaNV.ReadOnly = false;
         }
@@ -95,6 +105,9 @@ namespace QLShop_QA
                     sua.diaChi = txtDC.Text;
                     sua.dienThoai = txtDT.Text;
                     sua.ngaySinh = DateTime.Parse(dtpNgaySinh.Text);
+                    sua.taikhoan = txtTaiKhoan.Text;
+                    sua.matkhau = txtMatKhau.Text;
+                    sua.idQuyen = int.Parse(cboQuyen.Text);
 
                     db.SubmitChanges();
                     MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK);
@@ -121,6 +134,10 @@ namespace QLShop_QA
                     them.diaChi = txtDC.Text;
                     them.dienThoai = txtDT.Text;
                     them.ngaySinh = DateTime.Parse(dtpNgaySinh.Text);
+                    them.taikhoan = txtTaiKhoan.Text;
+                    them.matkhau = txtMatKhau.Text;
+                    them.idQuyen = int.Parse(cboQuyen.Text);
+
 
                     db.nhanViens.InsertOnSubmit(them);
                     db.SubmitChanges();
@@ -164,7 +181,5 @@ namespace QLShop_QA
                 e.Cancel = true;
             }
         }
-
-       
     }
 }

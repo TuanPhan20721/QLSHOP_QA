@@ -46,6 +46,7 @@ namespace QLShop_QA
                 cboMaChatLieu.DisplayMember = "maChatLieu";
                 cboMaChatLieu.ValueMember = "maChatLieu";
             }
+            txtMaSP.ReadOnly = true;
             loadDB();
         }
 
@@ -77,52 +78,78 @@ namespace QLShop_QA
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            try
             {
-                string masp = dgvSanPham.SelectedCells[0].OwningRow.Cells["MaSP"].Value.ToString();
-                hang delete = db.hangs.Where(p => p.maHang.Equals(masp)).SingleOrDefault();
-                db.hangs.DeleteOnSubmit(delete);
-                db.SubmitChanges();
+                using (QLShop_QADataContext db = new QLShop_QADataContext())
+                {
+                    string masp = dgvSanPham.SelectedCells[0].OwningRow.Cells["MaSP"].Value.ToString();
+                    hang delete = db.hangs.Where(p => p.maHang.Equals(masp)).SingleOrDefault();
+                    db.hangs.DeleteOnSubmit(delete);
+                    db.SubmitChanges();
+                }
+                MessageBox.Show("Xóa thành công", "Thông báo!", MessageBoxButtons.OK);
+                loadDB();
             }
-            loadDB();
+            catch (Exception)
+            {
+                MessageBox.Show("Có lỗi xảy ra!", "Thông báo!", MessageBoxButtons.OK);
+            }
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            try
             {
-                hang sua = db.hangs.Where(p => p.maHang.Equals(txtMaSP.Text)).SingleOrDefault();
-                sua.maHang = txtMaSP.Text;
-                sua.tenHang = txtTenSP.Text;
-                sua.maChatLieu = cboMaChatLieu.Text;
-                sua.soLuong = double.Parse(txtSoLuong.Text);
-                sua.donGiaNhap = double.Parse(txtDonGiaNhap.Text);
-                sua.donGiaBan = double.Parse(txtDonGiaBan.Text);
-                sua.anh = txtAnh.Text;
-                sua.ghiChu = txtGhiChu.Text;
+                using (QLShop_QADataContext db = new QLShop_QADataContext())
+                {
+                    hang sua = db.hangs.Where(p => p.maHang.Equals(txtMaSP.Text)).SingleOrDefault();
+                    sua.maHang = txtMaSP.Text;
+                    sua.tenHang = txtTenSP.Text;
+                    sua.maChatLieu = cboMaChatLieu.Text;
+                    sua.soLuong = double.Parse(txtSoLuong.Text);
+                    sua.donGiaNhap = double.Parse(txtDonGiaNhap.Text);
+                    sua.donGiaBan = double.Parse(txtDonGiaBan.Text);
+                    sua.anh = txtAnh.Text;
+                    sua.ghiChu = txtGhiChu.Text;
 
-                db.SubmitChanges();
+                    db.SubmitChanges();
+                }
+                MessageBox.Show("Sửa thành công", "Thông báo!", MessageBoxButtons.OK);
+                loadDB();
             }
-            loadDB();
+            catch (Exception)
+            {
+                MessageBox.Show("Có lỗi xảy ra!", "Thông báo!", MessageBoxButtons.OK);
+            }
+           
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            using (QLShop_QADataContext db = new QLShop_QADataContext())
+            try
             {
-                hang them = new hang();
-                them.maHang = txtMaSP.Text;
-                them.tenHang = txtTenSP.Text;
-                them.maChatLieu = cboMaChatLieu.Text;
-                them.soLuong = double.Parse(txtSoLuong.Text);
-                them.donGiaNhap = double.Parse(txtDonGiaNhap.Text);
-                them.donGiaBan = double.Parse(txtDonGiaBan.Text);
-                them.anh = txtAnh.Text;
-                them.ghiChu= txtGhiChu.Text;
+                using (QLShop_QADataContext db = new QLShop_QADataContext())
+                {
+                    hang them = new hang();
+                    them.maHang = txtMaSP.Text;
+                    them.tenHang = txtTenSP.Text;
+                    them.maChatLieu = cboMaChatLieu.Text;
+                    them.soLuong = double.Parse(txtSoLuong.Text);
+                    them.donGiaNhap = double.Parse(txtDonGiaNhap.Text);
+                    them.donGiaBan = double.Parse(txtDonGiaBan.Text);
+                    them.anh = txtAnh.Text;
+                    them.ghiChu = txtGhiChu.Text;
 
-                db.hangs.InsertOnSubmit(them);
-                db.SubmitChanges();
+                    db.hangs.InsertOnSubmit(them);
+                    db.SubmitChanges();
+                }
+                MessageBox.Show("Lưu thành công!", "Thông báo!", MessageBoxButtons.OK);
+                loadDB();
             }
-            loadDB();
+            catch (Exception)
+            {
+                MessageBox.Show("Sản phẩm đã tồn tại!", "Thông báo!", MessageBoxButtons.OK);
+            }
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -134,6 +161,7 @@ namespace QLShop_QA
             txtMaSP.Clear();
             txtSoLuong.Clear();
             txtTenSP.Clear();
+            txtMaSP.ReadOnly = false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

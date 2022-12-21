@@ -307,18 +307,15 @@ namespace QLShop_QA
         {
             using (QLShop_QADataContext db = new QLShop_QADataContext())
             {
-                   var hoaDonBan = from a in db.chiTietHDBans
-                                   from b in db.hangs
-                                   where a.maHang == b.maHang && a.maHDBan == txtMaHD.Text
-                                   select new
-                                        {
-                                            maHang = a.maHang,
-                                            tenHang = b.tenHang,
-                                            soLuong = Convert.ToDouble(a.soLuong),
-                                            donGia = Convert.ToDouble(b.donGiaBan),
-                                            giamGia = Convert.ToDouble(a.giamGia),
-                                            thanhTien = Convert.ToDouble(a.thanhTien),
-                                        };
+                var hoaDonBan = db.chiTietHDBans.Where(c => c.maHDBan == txtMaHD.Text).Select
+                                (ct => new
+                                {
+                                    tenHang = ct.hang.tenHang,
+                                    soLuong = Convert.ToDouble(ct.soLuong),
+                                    donGia = Convert.ToDouble(ct.hang.donGiaBan),
+                                    giamGia = Convert.ToDouble(ct.giamGia),
+                                    thanhTien = Convert.ToDouble(ct.thanhTien),
+                                });
 
                 CRHoaDonSanPham r = new CRHoaDonSanPham();
                 r.SetDataSource(hoaDonBan);

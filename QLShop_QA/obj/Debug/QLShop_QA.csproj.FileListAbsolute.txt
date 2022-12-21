@@ -33,3 +33,4 @@ C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.cspro
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.csproj.CopyComplete
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.exe
 C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.pdb
+C:\Users\tuanp\OneDrive\Máy tính\QLShop_QA\QLShop_QA\obj\Debug\QLShop_QA.csproj.AssemblyReference.cache

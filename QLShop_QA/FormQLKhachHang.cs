@@ -65,8 +65,8 @@ namespace QLShop_QA
             {
                 using (QLShop_QADataContext db = new QLShop_QADataContext())
                 {
-                    string makh = dgvKhachHang.SelectedCells[0].OwningRow.Cells["makhach"].Value.ToString();
-                    khach delete = db.khaches.Where(p => p.makhach.Equals(makh)).SingleOrDefault();
+                    string makh = dgvKhachHang.SelectedCells[0].OwningRow.Cells["maKhachHang"].Value.ToString();
+                    khach delete = db.khaches.Where(p => p.makhach.Equals(makh)).Single();
                     db.khaches.DeleteOnSubmit(delete);
                     db.SubmitChanges();
                     MessageBox.Show("Xóa thành công", "Thông báo!", MessageBoxButtons.OK);

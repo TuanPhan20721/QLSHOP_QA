@@ -30,12 +30,6 @@ namespace QLShop_QA
         private void InitializeComponent()
         {
             this.gtvQLNV = new System.Windows.Forms.DataGridView();
-            this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
@@ -57,6 +51,21 @@ namespace QLShop_QA
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboQuyen = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gtvQLNV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +74,9 @@ namespace QLShop_QA
             this.gtvQLNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gtvQLNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maNhanVien,
+            this.taiKhoan,
+            this.matKhau,
+            this.idQuyen,
             this.tenNhanVien,
             this.gioiTinh,
             this.diaChi,
@@ -76,43 +88,6 @@ namespace QLShop_QA
             this.gtvQLNV.Size = new System.Drawing.Size(633, 238);
             this.gtvQLNV.TabIndex = 0;
             this.gtvQLNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gtvQLNV_CellClick);
-            // 
-            // maNhanVien
-            // 
-            this.maNhanVien.DataPropertyName = "maNhanVien";
-            this.maNhanVien.HeaderText = "Mã nhân viên";
-            this.maNhanVien.Name = "maNhanVien";
-            // 
-            // tenNhanVien
-            // 
-            this.tenNhanVien.DataPropertyName = "tenNhanVien";
-            this.tenNhanVien.HeaderText = "Tên nhân viên";
-            this.tenNhanVien.Name = "tenNhanVien";
-            // 
-            // gioiTinh
-            // 
-            this.gioiTinh.DataPropertyName = "gioiTinh";
-            this.gioiTinh.HeaderText = "Giới tính";
-            this.gioiTinh.Name = "gioiTinh";
-            this.gioiTinh.Width = 90;
-            // 
-            // diaChi
-            // 
-            this.diaChi.DataPropertyName = "diaChi";
-            this.diaChi.HeaderText = "Địa chỉ";
-            this.diaChi.Name = "diaChi";
-            // 
-            // dienThoai
-            // 
-            this.dienThoai.DataPropertyName = "dienThoai";
-            this.dienThoai.HeaderText = "Điện thoại";
-            this.dienThoai.Name = "dienThoai";
-            // 
-            // ngaySinh
-            // 
-            this.ngaySinh.DataPropertyName = "ngaySinh";
-            this.ngaySinh.HeaderText = "Ngày sinh";
-            this.ngaySinh.Name = "ngaySinh";
             // 
             // label1
             // 
@@ -306,11 +281,127 @@ namespace QLShop_QA
             this.dtpNgaySinh.Size = new System.Drawing.Size(142, 20);
             this.dtpNgaySinh.TabIndex = 22;
             // 
+            // maNhanVien
+            // 
+            this.maNhanVien.DataPropertyName = "maNhanVien";
+            this.maNhanVien.HeaderText = "Mã nhân viên";
+            this.maNhanVien.Name = "maNhanVien";
+            // 
+            // taiKhoan
+            // 
+            this.taiKhoan.DataPropertyName = "taiKhoan";
+            this.taiKhoan.HeaderText = "Tài khoản";
+            this.taiKhoan.Name = "taiKhoan";
+            // 
+            // matKhau
+            // 
+            this.matKhau.DataPropertyName = "matKhau";
+            this.matKhau.HeaderText = "Mật khẩu";
+            this.matKhau.Name = "matKhau";
+            // 
+            // idQuyen
+            // 
+            this.idQuyen.DataPropertyName = "idQuyen";
+            this.idQuyen.HeaderText = "Quyền";
+            this.idQuyen.Name = "idQuyen";
+            // 
+            // tenNhanVien
+            // 
+            this.tenNhanVien.DataPropertyName = "tenNhanVien";
+            this.tenNhanVien.HeaderText = "Tên nhân viên";
+            this.tenNhanVien.Name = "tenNhanVien";
+            // 
+            // gioiTinh
+            // 
+            this.gioiTinh.DataPropertyName = "gioiTinh";
+            this.gioiTinh.HeaderText = "Giới tính";
+            this.gioiTinh.Name = "gioiTinh";
+            this.gioiTinh.Width = 90;
+            // 
+            // diaChi
+            // 
+            this.diaChi.DataPropertyName = "diaChi";
+            this.diaChi.HeaderText = "Địa chỉ";
+            this.diaChi.Name = "diaChi";
+            // 
+            // dienThoai
+            // 
+            this.dienThoai.DataPropertyName = "dienThoai";
+            this.dienThoai.HeaderText = "Điện thoại";
+            this.dienThoai.Name = "dienThoai";
+            // 
+            // ngaySinh
+            // 
+            this.ngaySinh.DataPropertyName = "ngaySinh";
+            this.ngaySinh.HeaderText = "Ngày sinh";
+            this.ngaySinh.Name = "ngaySinh";
+            // 
+            // txtTaiKhoan
+            // 
+            this.txtTaiKhoan.Location = new System.Drawing.Point(822, 85);
+            this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.Size = new System.Drawing.Size(145, 20);
+            this.txtTaiKhoan.TabIndex = 23;
+            // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.Location = new System.Drawing.Point(822, 126);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(145, 20);
+            this.txtMatKhau.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label3.Location = new System.Drawing.Point(751, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Tài khoản";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label4.Location = new System.Drawing.Point(751, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Mật khẩu";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label5.Location = new System.Drawing.Point(751, 171);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Quyền";
+            // 
+            // cboQuyen
+            // 
+            this.cboQuyen.FormattingEnabled = true;
+            this.cboQuyen.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.cboQuyen.Location = new System.Drawing.Point(822, 168);
+            this.cboQuyen.Name = "cboQuyen";
+            this.cboQuyen.Size = new System.Drawing.Size(145, 21);
+            this.cboQuyen.TabIndex = 29;
+            // 
             // FormQLNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 485);
+            this.ClientSize = new System.Drawing.Size(979, 485);
+            this.Controls.Add(this.cboQuyen);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtMatKhau);
+            this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.cboGioiTinh);
             this.Controls.Add(this.txtTenNV);
@@ -368,10 +459,19 @@ namespace QLShop_QA
         private System.Windows.Forms.ComboBox cboGioiTinh;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn matKhau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idQuyen;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinh;
+        private System.Windows.Forms.TextBox txtTaiKhoan;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cboQuyen;
     }
 }
